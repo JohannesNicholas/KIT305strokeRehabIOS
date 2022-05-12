@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>411243022319-a5s4an8qq2at8nukf2k6mf0p6sb2jliv.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.411243022319-a5s4an8qq2at8nukf2k6mf0p6sb2jliv</string>
+	<key>API_KEY</key>
+	<string>AIzaSyCchmhuPpBi_qEd8DwrZl1JrbJGZGtd6Xo</string>
+	<key>GCM_SENDER_ID</key>
+	<string>411243022319</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>au.edu.utas.kit305.strokeRehab</string>
+	<key>PROJECT_ID</key>
+	<string>kit305-95935</string>
+	<key>STORAGE_BUCKET</key>
+	<string>kit305-95935.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:411243022319:ios:1eed7bd6183530fa8c981a</string>
+</dict>
+</plist>
