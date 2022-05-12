@@ -1,0 +1,6 @@
+framework module Pods_strokeRehab_strokeRehabUITests {
+  umbrella header "Pods-strokeRehab-strokeRehabUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}
