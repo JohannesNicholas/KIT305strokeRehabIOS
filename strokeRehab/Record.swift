@@ -9,7 +9,7 @@ import Foundation
 import Firebase
 import FirebaseFirestoreSwift
 
-public struct Movie : Codable
+public struct Record : Codable
 {
     @DocumentID var documentID:String?
     var buttonsOrNotches: Int32?

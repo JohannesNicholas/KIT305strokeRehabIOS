@@ -30,6 +30,23 @@ class HistoryController: UIViewController {
                 } else {
                     for document in querySnapshot!.documents {
                         print("\(document.documentID) => \(document.data())")
+                        
+                        let conversionResult = Result
+                        {
+                            try document.data(as: Record.self)
+                        }
+
+                        //check if conversionResult is success or failure (i.e. was an exception/error thrown?
+                        switch conversionResult
+                        {
+                            //no problems (but could still be nil)
+                            case .success(let record):
+                                print("Movie: \(record)")
+                                
+                            case .failure(let error):
+                                // A `Movie` value could not be initialized from the DocumentSnapshot.
+                                print("Error decoding movie: \(error)")
+                        }
                     }
                 }
         }
