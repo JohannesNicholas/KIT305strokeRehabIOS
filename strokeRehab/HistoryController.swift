@@ -15,6 +15,8 @@ class HistoryController: UIViewController {
     @IBOutlet var tableView: UITableView!
     
     
+    var records: [Record] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -42,12 +44,14 @@ class HistoryController: UIViewController {
                             //no problems (but could still be nil)
                             case .success(let record):
                                 print("Movie: \(record)")
+                            self.records.insert(record, at: 0)
                                 
                             case .failure(let error):
                                 // A `Movie` value could not be initialized from the DocumentSnapshot.
                                 print("Error decoding movie: \(error)")
                         }
                     }
+                    self.tableView.reloadData()
                 }
         }
         
@@ -66,13 +70,23 @@ extension HistoryController: UITableViewDelegate {
 }
 extension HistoryController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
+        if (records.isEmpty){
+            return 1
+        }
+        return self.records.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
         
-        cell.textLabel?.text = "Hello \(indexPath.row)"
+        if (self.records.isEmpty){
+            cell.textLabel?.text = "Loading..."
+        }
+        else {
+            let record = self.records[indexPath.row]
+            cell.textLabel?.text = record.title ?? "Untitled" + " " + String(record.reps ?? 0)
+        }
+        
         
         return cell
     }
