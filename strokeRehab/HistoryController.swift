@@ -77,14 +77,16 @@ extension HistoryController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! HistoryViewCell
         
         if (self.records.isEmpty){
-            cell.textLabel?.text = "Loading..."
+            cell.left.text = "Loading..."
         }
         else {
             let record = self.records[indexPath.row]
-            cell.textLabel?.text = record.title ?? "Untitled" + " " + String(record.reps ?? 0)
+            cell.left.text = record.title ?? "Untitled"
+            cell.middle.text = record.start?.dateValue().description
+            cell.right.text = String(describing: record.reps)
         }
         
         

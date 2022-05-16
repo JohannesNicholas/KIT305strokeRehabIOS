@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		2FB91E103E8E38D1D0D35A52 /* Pods_strokeRehabTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E78EC9A650287109342585A /* Pods_strokeRehabTests.framework */; };
+		5C0AA834283269C400ECE562 /* HistoryViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C0AA833283269C400ECE562 /* HistoryViewCell.swift */; };
 		5C0C2970282CD4D200300737 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5C0C296F282CD4D200300737 /* GoogleService-Info.plist */; };
 		5C16F116282CC1AC007D5F53 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C16F115282CC1AC007D5F53 /* AppDelegate.swift */; };
 		5C16F118282CC1AC007D5F53 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C16F117282CC1AC007D5F53 /* SceneDelegate.swift */; };
@@ -20,7 +21,6 @@
 		5C16F139282CC1B0007D5F53 /* strokeRehabUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C16F138282CC1B0007D5F53 /* strokeRehabUITestsLaunchTests.swift */; };
 		5CE8D79F28320901009C170C /* HistoryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CE8D79E28320901009C170C /* HistoryController.swift */; };
 		5CE8D7A128321460009C170C /* Record.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CE8D7A028321460009C170C /* Record.swift */; };
-		5CFB147628323B1400E86979 /* HistoryUICell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CFB147528323B1400E86979 /* HistoryUICell.swift */; };
 		DA230E23B3DDF22960B93E3D /* Pods_strokeRehab_strokeRehabUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AC4A93D5E95F3B46D817934B /* Pods_strokeRehab_strokeRehabUITests.framework */; };
 		F331003DFC7A0BF6BFED0075 /* Pods_strokeRehab.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F3C309CBE53EDF931E63752 /* Pods_strokeRehab.framework */; };
 /* End PBXBuildFile section */
@@ -48,6 +48,7 @@
 		1C17B28CEDDECA8834F033E0 /* Pods-strokeRehab.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-strokeRehab.debug.xcconfig"; path = "Target Support Files/Pods-strokeRehab/Pods-strokeRehab.debug.xcconfig"; sourceTree = "<group>"; };
 		4E78EC9A650287109342585A /* Pods_strokeRehabTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_strokeRehabTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5515A7C0A4EC9C964A9626E3 /* Pods-strokeRehabTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-strokeRehabTests.release.xcconfig"; path = "Target Support Files/Pods-strokeRehabTests/Pods-strokeRehabTests.release.xcconfig"; sourceTree = "<group>"; };
+		5C0AA833283269C400ECE562 /* HistoryViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewCell.swift; sourceTree = "<group>"; };
 		5C0C296F282CD4D200300737 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		5C16F112282CC1AC007D5F53 /* strokeRehab.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = strokeRehab.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5C16F115282CC1AC007D5F53 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -64,7 +65,6 @@
 		5C16F138282CC1B0007D5F53 /* strokeRehabUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = strokeRehabUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		5CE8D79E28320901009C170C /* HistoryController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryController.swift; sourceTree = "<group>"; };
 		5CE8D7A028321460009C170C /* Record.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Record.swift; sourceTree = "<group>"; };
-		5CFB147528323B1400E86979 /* HistoryUICell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryUICell.swift; sourceTree = "<group>"; };
 		7F3C309CBE53EDF931E63752 /* Pods_strokeRehab.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_strokeRehab.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A5242056A2F095E191ABCADF /* Pods-strokeRehab.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-strokeRehab.release.xcconfig"; path = "Target Support Files/Pods-strokeRehab/Pods-strokeRehab.release.xcconfig"; sourceTree = "<group>"; };
 		AC4A93D5E95F3B46D817934B /* Pods_strokeRehab_strokeRehabUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_strokeRehab_strokeRehabUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -139,7 +139,7 @@
 				5C16F117282CC1AC007D5F53 /* SceneDelegate.swift */,
 				5C16F119282CC1AC007D5F53 /* ViewController.swift */,
 				5C16F11B282CC1AC007D5F53 /* Main.storyboard */,
-				5CFB147528323B1400E86979 /* HistoryUICell.swift */,
+				5C0AA833283269C400ECE562 /* HistoryViewCell.swift */,
 				5C16F11E282CC1AF007D5F53 /* Assets.xcassets */,
 				5C16F120282CC1AF007D5F53 /* LaunchScreen.storyboard */,
 				5C16F123282CC1AF007D5F53 /* Info.plist */,
@@ -423,8 +423,8 @@
 				5C16F11A282CC1AC007D5F53 /* ViewController.swift in Sources */,
 				5CE8D7A128321460009C170C /* Record.swift in Sources */,
 				5C16F116282CC1AC007D5F53 /* AppDelegate.swift in Sources */,
-				5CFB147628323B1400E86979 /* HistoryUICell.swift in Sources */,
 				5C16F118282CC1AC007D5F53 /* SceneDelegate.swift in Sources */,
+				5C0AA834283269C400ECE562 /* HistoryViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
