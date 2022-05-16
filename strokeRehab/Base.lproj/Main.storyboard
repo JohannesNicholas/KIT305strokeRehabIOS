@@ -77,7 +77,7 @@
                         <viewLayoutGuide key="safeArea" id="jdq-ed-1Rr"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Home" image="house.fill" catalog="system" selectedImage="house" id="pnv-sM-zhf"/>
+                    <tabBarItem key="tabBarItem" title="Home" image="house.fill" catalog="system" id="pnv-sM-zhf"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jY4-dU-WjL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -105,7 +105,6 @@
     </scenes>
     <resources>
         <image name="gearshape.fill" catalog="system" width="128" height="121"/>
-        <image name="house" catalog="system" width="128" height="106"/>
         <image name="house.fill" catalog="system" width="128" height="106"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
