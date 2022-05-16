@@ -22,7 +22,20 @@ class HistoryController: UIViewController {
         tableView.dataSource = self
         
         let db = Firestore.firestore()
-        print("\nINITIALIZED FIRESTORE APP \(db.app.name)\n")    }
+        print("\nINITIALIZED FIRESTORE APP \(db.app.name)\n")
+        
+        db.collection("Records").getDocuments() { (querySnapshot, err) in
+                if let err = err {
+                    print("Error getting documents: \(err)")
+                } else {
+                    for document in querySnapshot!.documents {
+                        print("\(document.documentID) => \(document.data())")
+                    }
+                }
+        }
+        
+        
+    }
 
 
 }
