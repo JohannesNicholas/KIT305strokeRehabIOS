@@ -15,7 +15,18 @@ class HistoryController: UIViewController {
     @IBOutlet var tableView: UITableView!
     
     @IBAction func shareButton(_ sender: Any) {
-        let text = "this is some text i want to share."
+        var text = "title, start, end, repetition count, presses count\n"
+        
+        for record in records {
+            var line = (record.title ?? "title") + ","
+            line += (record.start?.description ?? "unknown") + ","
+            line += (record.messages?.last?.datetime?.description ?? "unknown") + ","
+            line += (record.reps == nil ? "∞" : String(record.reps ?? 0)) + ","
+            line += (record.buttonsOrNotches == nil ? "?" : String(record.buttonsOrNotches ?? 0)) + ","
+            text += line + "\n"
+        }
+        
+        
         
         let textToShare = [ text ]
         let activityViewController = UIActivityViewController(activityItems: textToShare, applicationActivities: nil)
