@@ -16,8 +16,16 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PX3-Dz-X2n">
+                                <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                                <items>
+                                    <navigationItem title="History" id="XOk-bt-D5m">
+                                        <barButtonItem key="rightBarButtonItem" title="Share" image="square.and.arrow.up" catalog="system" id="sWj-ed-5Ns"/>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="yBz-8L-Iyh">
-                                <rect key="frame" x="0.0" y="44" width="414" height="769"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" id="mXV-if-doY" customClass="HistoryViewCell" customModule="strokeRehab" customModuleProvider="target">
@@ -79,10 +87,13 @@
                         <viewLayoutGuide key="safeArea" id="nXr-Jw-0Wa"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="nXr-Jw-0Wa" firstAttribute="trailing" secondItem="yBz-8L-Iyh" secondAttribute="trailing" id="i5N-ff-pxg"/>
-                            <constraint firstItem="yBz-8L-Iyh" firstAttribute="top" secondItem="nXr-Jw-0Wa" secondAttribute="top" id="p65-Ib-CUO"/>
-                            <constraint firstItem="yBz-8L-Iyh" firstAttribute="leading" secondItem="nXr-Jw-0Wa" secondAttribute="leading" id="ueu-Uw-iLP"/>
-                            <constraint firstItem="nXr-Jw-0Wa" firstAttribute="bottom" secondItem="yBz-8L-Iyh" secondAttribute="bottom" id="v9C-RH-Fin"/>
+                            <constraint firstItem="PX3-Dz-X2n" firstAttribute="top" secondItem="nXr-Jw-0Wa" secondAttribute="top" id="PYv-Re-cgR"/>
+                            <constraint firstItem="yBz-8L-Iyh" firstAttribute="bottom" secondItem="nXr-Jw-0Wa" secondAttribute="bottom" id="SCN-nZ-vV7"/>
+                            <constraint firstItem="yBz-8L-Iyh" firstAttribute="leading" secondItem="nXr-Jw-0Wa" secondAttribute="leading" id="YrR-ge-fM3"/>
+                            <constraint firstItem="PX3-Dz-X2n" firstAttribute="trailing" secondItem="nXr-Jw-0Wa" secondAttribute="trailing" id="aYw-e1-pRd"/>
+                            <constraint firstItem="PX3-Dz-X2n" firstAttribute="leading" secondItem="nXr-Jw-0Wa" secondAttribute="leading" id="af6-Nw-CsC"/>
+                            <constraint firstItem="yBz-8L-Iyh" firstAttribute="top" secondItem="PX3-Dz-X2n" secondAttribute="bottom" id="hcv-FF-ChE"/>
+                            <constraint firstItem="yBz-8L-Iyh" firstAttribute="trailing" secondItem="nXr-Jw-0Wa" secondAttribute="trailing" id="hgF-Df-9Lw"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" systemItem="history" id="AMx-El-Ocz"/>
@@ -168,6 +179,7 @@
         <image name="chevron.forward" catalog="system" width="96" height="128"/>
         <image name="gearshape.fill" catalog="system" width="128" height="121"/>
         <image name="house.fill" catalog="system" width="128" height="106"/>
+        <image name="square.and.arrow.up" catalog="system" width="115" height="128"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
