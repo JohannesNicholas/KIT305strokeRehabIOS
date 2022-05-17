@@ -15,7 +15,13 @@ class HistoryController: UIViewController {
     @IBOutlet var tableView: UITableView!
     
     @IBAction func shareButton(_ sender: Any) {
-        print("Share pressed!")
+        let text = "this is some text i want to share."
+        
+        let textToShare = [ text ]
+        let activityViewController = UIActivityViewController(activityItems: textToShare, applicationActivities: nil)
+        activityViewController.popoverPresentationController?.sourceView = self.view
+        
+        self.present(activityViewController, animated: true, completion: nil)
     }
     
     var records: [Record] = []
