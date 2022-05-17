@@ -81,12 +81,19 @@ extension HistoryController: UITableViewDataSource {
         
         if (self.records.isEmpty){
             cell.left.text = "Loading..."
+            cell.middle.text = "Loading..."
+            cell.right.text = "Loading..."
         }
         else {
             let record = self.records[indexPath.row]
             cell.left.text = record.title ?? "Untitled"
-            cell.middle.text = record.start?.dateValue().description
-            cell.right.text = String(describing: record.reps)
+            
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat="d MMM ha"
+            let startDate : Date = record.start?.dateValue() ?? Date()
+            cell.middle.text = dateFormatter.string(from: startDate)
+            
+            cell.right.text = "\(record.reps == nil ? "∞" : String(record.reps ?? 0)) x \(record.buttonsOrNotches == nil ? "?" : String(record.buttonsOrNotches ?? 0))"
         }
         
         
