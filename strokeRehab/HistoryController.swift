@@ -14,6 +14,9 @@ class HistoryController: UIViewController {
 
     @IBOutlet var tableView: UITableView!
     
+    @IBAction func shareButton(_ sender: Any) {
+        print("Share pressed!")
+    }
     
     var records: [Record] = []
     
