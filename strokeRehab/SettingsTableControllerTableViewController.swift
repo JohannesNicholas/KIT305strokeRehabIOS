@@ -9,12 +9,17 @@ import UIKit
 
 struct DefaultKeys {
     static let name = "nameStringKey"
+    static let normalReps = "normalRepsStringKey"
 }
 
 class SettingsTableControllerTableViewController: UITableViewController, UITextFieldDelegate {
 
     @IBOutlet var settingsTableView: UITableView!
     @IBOutlet var nameTextFeild: UITextField!
+    
+    @IBOutlet var normalGoalsButton: UIButton!
+    
+    
     @IBAction func nameEntered(_ sender: UITextField) {
         let defaults = UserDefaults.standard
         
@@ -43,6 +48,49 @@ class SettingsTableControllerTableViewController: UITableViewController, UITextF
         else {
             nameTextFeild.text = "Nick O'Teen"
         }
+        
+        //setup multi options
+        setupOptions(button: normalGoalsButton, options: ["2", "3", "4", "5"], title: "Number of Repetitions (Goal)", userDefaultsKey: DefaultKeys.normalReps)
+    }
+    
+    
+    
+    //sets up options for a settings button
+    func setupOptions(button: UIButton, options: [String], title: String, userDefaultsKey: String) {
+        var optionActions: [UIAction] = []
+        let defaults = UserDefaults.standard
+        
+        var selected = options[0]
+        //get the saved user defaults
+        if let name = defaults.string(forKey: userDefaultsKey) {
+            selected = name
+        }
+        
+        
+        
+        for option in options {
+            
+            var state = UIMenuElement.State.off
+            if option == selected {
+                state = UIMenuElement.State.on
+            }
+            
+            optionActions.append(UIAction(title:option, state: state) { (action) in
+                
+                
+                print("Selected ", option)
+                
+                defaults.set(option, forKey: userDefaultsKey)
+            })
+        }
+        
+        button.menu = UIMenu(title: title, options: .displayInline, children: optionActions)
+
+        button.showsMenuAsPrimaryAction = true
+        
+        
+        
+        
     }
 
     // MARK: - Table view data source

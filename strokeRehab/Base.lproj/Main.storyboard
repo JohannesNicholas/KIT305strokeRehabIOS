@@ -5,6 +5,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="UIMenu" message="Requires Xcode 11 or later." minToolsVersion="11.0" requiredIntegratedClassName="UICommandDiff"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -200,24 +201,31 @@
                             <tableViewSection headerTitle="🌐 Normal" id="Dwp-VC-qeg">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="4u7-r9-GaW">
-                                        <rect key="frame" x="0.0" y="146" width="414" height="32.5"/>
+                                        <rect key="frame" x="0.0" y="146" width="414" height="30.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="4u7-r9-GaW" id="XHQ-JX-tqL">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="32.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="30.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="Gn3-n6-qT8">
-                                                    <rect key="frame" x="16" y="0.0" width="382" height="32.5"/>
+                                                    <rect key="frame" x="16" y="0.0" width="382" height="30.5"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Number of Reps (Goal)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="agz-EI-8rq">
-                                                            <rect key="frame" x="0.0" y="0.0" width="191" height="32.5"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="191" height="30.5"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="YFe-bw-3lX">
-                                                            <rect key="frame" x="191" y="0.0" width="191" height="32.5"/>
-                                                        </stepper>
+                                                        <button opaque="NO" contentMode="scaleToFill" showsMenuAsPrimaryAction="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" changesSelectionAsPrimaryAction="YES" translatesAutoresizingMaskIntoConstraints="NO" id="urM-Fu-flU">
+                                                            <rect key="frame" x="191" y="0.0" width="191" height="30.5"/>
+                                                            <menu key="menu" id="tfy-KL-aF8">
+                                                                <children>
+                                                                    <command title="Item 1" id="FQO-JC-V67"/>
+                                                                    <command title="Item 2" id="GMV-XG-mV1"/>
+                                                                </children>
+                                                            </menu>
+                                                            <state key="normal" title="Button"/>
+                                                        </button>
                                                     </subviews>
                                                 </stackView>
                                             </subviews>
@@ -226,6 +234,117 @@
                                                 <constraint firstItem="Gn3-n6-qT8" firstAttribute="leading" secondItem="XHQ-JX-tqL" secondAttribute="leading" constant="16" id="NLu-46-brB"/>
                                                 <constraint firstAttribute="trailing" secondItem="Gn3-n6-qT8" secondAttribute="trailing" constant="16" id="eGf-aq-nME"/>
                                                 <constraint firstAttribute="bottom" secondItem="Gn3-n6-qT8" secondAttribute="bottom" id="uz2-Bo-KVP"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="DHK-PB-h12">
+                                        <rect key="frame" x="0.0" y="176.5" width="414" height="30.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="DHK-PB-h12" id="Ml3-rj-gm9">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="30.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="aRe-mx-lgr">
+                                                    <rect key="frame" x="16" y="0.0" width="382" height="30.5"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Number of Reps (Goal)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ej4-6K-cIS">
+                                                            <rect key="frame" x="0.0" y="0.0" width="191" height="30.5"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <button opaque="NO" contentMode="scaleToFill" showsMenuAsPrimaryAction="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" changesSelectionAsPrimaryAction="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qP9-41-g9r">
+                                                            <rect key="frame" x="191" y="0.0" width="191" height="30.5"/>
+                                                            <menu key="menu" id="Y9t-uN-Fzo">
+                                                                <children>
+                                                                    <command title="Item 1" id="4so-1e-dey"/>
+                                                                    <command title="Item 2" id="upb-uU-B0e"/>
+                                                                </children>
+                                                            </menu>
+                                                            <state key="normal" title="Button"/>
+                                                        </button>
+                                                    </subviews>
+                                                </stackView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="aRe-mx-lgr" secondAttribute="bottom" id="gxf-QW-uEq"/>
+                                                <constraint firstItem="aRe-mx-lgr" firstAttribute="leading" secondItem="Ml3-rj-gm9" secondAttribute="leading" constant="16" id="lzj-Az-EMg"/>
+                                                <constraint firstItem="aRe-mx-lgr" firstAttribute="top" secondItem="Ml3-rj-gm9" secondAttribute="top" id="r0n-5E-xaa"/>
+                                                <constraint firstAttribute="trailing" secondItem="aRe-mx-lgr" secondAttribute="trailing" constant="16" id="vHN-xU-diJ"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="OOT-Ok-yGc">
+                                        <rect key="frame" x="0.0" y="207" width="414" height="30.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="OOT-Ok-yGc" id="7Sq-D1-hgN">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="30.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="ldk-nf-mAW">
+                                                    <rect key="frame" x="16" y="0.0" width="382" height="30.5"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Number of Reps (Goal)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="syi-mm-t7e">
+                                                            <rect key="frame" x="0.0" y="0.0" width="191" height="30.5"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <button opaque="NO" contentMode="scaleToFill" showsMenuAsPrimaryAction="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" changesSelectionAsPrimaryAction="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vaq-Bh-jso">
+                                                            <rect key="frame" x="191" y="0.0" width="191" height="30.5"/>
+                                                            <menu key="menu" id="nWi-fD-b43">
+                                                                <children>
+                                                                    <command title="Item 1" id="nxf-EX-A6T"/>
+                                                                    <command title="Item 2" id="HOh-kl-2aM"/>
+                                                                </children>
+                                                            </menu>
+                                                            <state key="normal" title="Button"/>
+                                                        </button>
+                                                    </subviews>
+                                                </stackView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="ldk-nf-mAW" secondAttribute="bottom" id="2BL-qT-X4p"/>
+                                                <constraint firstAttribute="trailing" secondItem="ldk-nf-mAW" secondAttribute="trailing" constant="16" id="42e-zw-wYT"/>
+                                                <constraint firstItem="ldk-nf-mAW" firstAttribute="leading" secondItem="7Sq-D1-hgN" secondAttribute="leading" constant="16" id="bDv-ka-D9C"/>
+                                                <constraint firstItem="ldk-nf-mAW" firstAttribute="top" secondItem="7Sq-D1-hgN" secondAttribute="top" id="cEq-JQ-Q6f"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="m1S-ko-aOF">
+                                        <rect key="frame" x="0.0" y="237.5" width="414" height="30.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="m1S-ko-aOF" id="U1t-lp-soL">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="30.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="iAW-Ij-wLz">
+                                                    <rect key="frame" x="16" y="0.0" width="382" height="30.5"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Number of Reps (Goal)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b43-rc-qL5">
+                                                            <rect key="frame" x="0.0" y="0.0" width="191" height="30.5"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <button opaque="NO" contentMode="scaleToFill" showsMenuAsPrimaryAction="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" changesSelectionAsPrimaryAction="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zNh-tp-Ry5">
+                                                            <rect key="frame" x="191" y="0.0" width="191" height="30.5"/>
+                                                            <menu key="menu" id="4Uk-f2-VLj">
+                                                                <children>
+                                                                    <command title="Item 1" id="HaE-oJ-yRU"/>
+                                                                    <command title="Item 2" id="LOe-OL-3MR"/>
+                                                                </children>
+                                                            </menu>
+                                                            <state key="normal" title="Button"/>
+                                                        </button>
+                                                    </subviews>
+                                                </stackView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="iAW-Ij-wLz" secondAttribute="trailing" constant="16" id="cil-y0-UKk"/>
+                                                <constraint firstItem="iAW-Ij-wLz" firstAttribute="leading" secondItem="U1t-lp-soL" secondAttribute="leading" constant="16" id="mEy-hs-EnK"/>
+                                                <constraint firstItem="iAW-Ij-wLz" firstAttribute="top" secondItem="U1t-lp-soL" secondAttribute="top" id="qbs-TR-Q7e"/>
+                                                <constraint firstAttribute="bottom" secondItem="iAW-Ij-wLz" secondAttribute="bottom" id="vfN-5G-cGg"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -239,6 +358,8 @@
                     </tableView>
                     <connections>
                         <outlet property="nameTextFeild" destination="QPM-cc-jrl" id="diy-he-G9x"/>
+                        <outlet property="normalGoalsButton" destination="urM-Fu-flU" id="rmp-wY-faJ"/>
+                        <outlet property="settingsTableView" destination="JQ7-5p-M2m" id="vN2-fM-05a"/>
                         <outlet property="tableView" destination="JQ7-5p-M2m" id="GGE-1a-NCx"/>
                     </connections>
                 </tableViewController>
