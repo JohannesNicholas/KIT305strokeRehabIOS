@@ -117,16 +117,20 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Settings" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tme-oy-Vk8">
-                                <rect key="frame" x="70" y="129" width="63" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="H2V-rH-7UG">
+                                <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                                <items>
+                                    <navigationItem title="Settings" id="8am-PG-3y9"/>
+                                </items>
+                            </navigationBar>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="HvK-7N-4KW"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="H2V-rH-7UG" firstAttribute="top" secondItem="HvK-7N-4KW" secondAttribute="top" id="6Jh-0b-C4b"/>
+                            <constraint firstItem="H2V-rH-7UG" firstAttribute="leading" secondItem="HvK-7N-4KW" secondAttribute="leading" id="Zfj-5r-Crx"/>
+                            <constraint firstItem="H2V-rH-7UG" firstAttribute="trailing" secondItem="HvK-7N-4KW" secondAttribute="trailing" id="eYU-3f-kfJ"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Settings" image="gearshape.fill" catalog="system" id="r3X-D1-WZ5"/>
                 </viewController>
@@ -142,16 +146,20 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Home" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4B0-ph-ild">
-                                <rect key="frame" x="79" y="144" width="46" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="znP-4v-iL3">
+                                <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                                <items>
+                                    <navigationItem title="Home" id="a0h-1s-3ur"/>
+                                </items>
+                            </navigationBar>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="jdq-ed-1Rr"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="znP-4v-iL3" firstAttribute="trailing" secondItem="jdq-ed-1Rr" secondAttribute="trailing" id="83T-gr-2d3"/>
+                            <constraint firstItem="znP-4v-iL3" firstAttribute="top" secondItem="jdq-ed-1Rr" secondAttribute="top" id="JPg-lc-MSn"/>
+                            <constraint firstItem="znP-4v-iL3" firstAttribute="leading" secondItem="jdq-ed-1Rr" secondAttribute="leading" id="ecZ-lm-vMg"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Home" image="house.fill" catalog="system" id="pnv-sM-zhf"/>
                 </viewController>
