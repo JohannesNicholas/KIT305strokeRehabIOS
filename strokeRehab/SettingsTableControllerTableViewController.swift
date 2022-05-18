@@ -13,6 +13,7 @@ struct DefaultKeys {
 
 class SettingsTableControllerTableViewController: UITableViewController, UITextFieldDelegate {
 
+    @IBOutlet var settingsTableView: UITableView!
     @IBOutlet var nameTextFeild: UITextField!
     @IBAction func nameEntered(_ sender: UITextField) {
         let defaults = UserDefaults.standard
@@ -48,7 +49,7 @@ class SettingsTableControllerTableViewController: UITableViewController, UITextF
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 1
+        return 2
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
