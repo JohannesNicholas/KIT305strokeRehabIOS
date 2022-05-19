@@ -94,19 +94,19 @@ class SettingsTableControllerTableViewController: UITableViewController, UITextF
         
         
         //setup multi options
-        setupOptions(button: normalGoalsButton, options: ["No goal", "3", "5", "20", "20"], title: "Number of Repetitions (Goal)", userDefaultsKey: DefaultKeys.normalReps)
+        setupOptions(button: normalGoalsButton, options: ["No goal", "3", "5", "20", "20"], title: "Number of Repetitions (Goal)", userDefaultsKey: DefaultKeys.normalReps, defaultOption: "5")
         
-        setupOptions(button: normalTimeButton, options: ["No time limit", "10", "30", "60"], title: "Time limit (seconds)", userDefaultsKey: DefaultKeys.normalTime)
+        setupOptions(button: normalTimeButton, options: ["No time limit", "10", "30", "60"], title: "Time limit (seconds)", userDefaultsKey: DefaultKeys.normalTime, defaultOption: "No time limit")
         
-        setupOptions(button: normalNumberButton, options: ["2", "3", "4", "5"], title: "Number of buttons", userDefaultsKey: DefaultKeys.normalNumButtons)
+        setupOptions(button: normalNumberButton, options: ["2", "3", "4", "5"], title: "Number of buttons", userDefaultsKey: DefaultKeys.normalNumButtons, defaultOption: "3")
         
-        setupOptions(button: normalSizeButton, options: ["S", "M", "L", "XL"], title: "Button Size", userDefaultsKey: DefaultKeys.normalSize)
+        setupOptions(button: normalSizeButton, options: ["S", "M", "L", "XL"], title: "Button Size", userDefaultsKey: DefaultKeys.normalSize, defaultOption: "M")
         
-        setupOptions(button: sliderRepsButton, options: ["No goal", "3", "5", "20", "20"], title: "Number of Repetitions (Goal)", userDefaultsKey: DefaultKeys.sliderReps)
+        setupOptions(button: sliderRepsButton, options: ["No goal", "3", "5", "20", "20"], title: "Number of Repetitions (Goal)", userDefaultsKey: DefaultKeys.sliderReps, defaultOption: "5")
         
-        setupOptions(button: sliderTimeButton, options: ["No time limit", "10", "30", "60"], title: "Time limit (seconds)", userDefaultsKey: DefaultKeys.sliderTime)
+        setupOptions(button: sliderTimeButton, options: ["No time limit", "10", "30", "60"], title: "Time limit (seconds)", userDefaultsKey: DefaultKeys.sliderTime, defaultOption: "No time limit")
         
-        setupOptions(button: sliderNumNotchesButton, options: ["2", "3", "4", "5"], title: "Number of Notches", userDefaultsKey: DefaultKeys.sliderNotches)
+        setupOptions(button: sliderNumNotchesButton, options: ["2", "3", "4", "5"], title: "Number of Notches", userDefaultsKey: DefaultKeys.sliderNotches, defaultOption: "4")
         
     
     }
@@ -114,11 +114,11 @@ class SettingsTableControllerTableViewController: UITableViewController, UITextF
     
     
     //sets up options for a settings button
-    func setupOptions(button: UIButton, options: [String], title: String, userDefaultsKey: String) {
+    func setupOptions(button: UIButton, options: [String], title: String, userDefaultsKey: String, defaultOption: String) {
         var optionActions: [UIAction] = []
         let defaults = UserDefaults.standard
         
-        var selected = options[0]
+        var selected = defaultOption
         //get the saved user defaults
         if let name = defaults.string(forKey: userDefaultsKey) {
             selected = name
