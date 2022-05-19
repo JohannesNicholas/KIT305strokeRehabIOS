@@ -159,7 +159,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <sections>
-                            <tableViewSection headerTitle="🙋Personal details" footerTitle="🙋Personal details" id="9xD-t1-z1x">
+                            <tableViewSection headerTitle="🙋Personal details" footerTitle="Personal details" id="9xD-t1-z1x">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="4sS-3W-351">
                                         <rect key="frame" x="0.0" y="44.5" width="320" height="50.5"/>
