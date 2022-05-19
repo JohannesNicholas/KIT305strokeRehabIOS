@@ -28,18 +28,44 @@ class SettingsTableControllerTableViewController: UITableViewController, UITextF
     
     @IBOutlet var normalGoalsButton: UIButton!
     @IBOutlet var normalTimeButton: UIButton!
+    @IBOutlet var normalNumberButton: UIButton!
+    @IBOutlet var normalSizeButton: UIButton!
+    
+    @IBOutlet var sliderRepsButton: UIButton!
+    @IBOutlet var sliderTimeButton: UIButton!
+    @IBOutlet var sliderNumNotchesButton: UIButton!
     
     
     @IBAction func nameEntered(_ sender: UITextField) {
         let defaults = UserDefaults.standard
-        
         let name = sender.attributedText?.string ?? "user"
         print("Hello ", name)
-        
         defaults.set(name, forKey: DefaultKeys.name)
     }
     
+    @IBOutlet var normalRandomSwitch: UISwitch!
+    @IBAction func normalRandomOrderChanged(_ sender: UISwitch) {
+        let defaults = UserDefaults.standard
+        let value = sender.isOn
+        print("Set to ", value)
+        defaults.set(value, forKey: DefaultKeys.normalRandom)
+    }
     
+    @IBOutlet var normalHighlightSwitch: UISwitch!
+    @IBAction func normalHighlightChanged(_ sender: UISwitch) {
+        let defaults = UserDefaults.standard
+        let value = sender.isOn
+        print("Set to ", value)
+        defaults.set(value, forKey: DefaultKeys.normalHighlightNext)
+    }
+    
+    @IBOutlet var sliderRandomSwitch: UISwitch!
+    @IBAction func sliderRandomOrderChanged(_ sender: UISwitch) {
+        let defaults = UserDefaults.standard
+        let value = sender.isOn
+        print("Set to ", value)
+        defaults.set(value, forKey: DefaultKeys.sliderRandom)
+    }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         self.view.endEditing(true)
@@ -51,6 +77,7 @@ class SettingsTableControllerTableViewController: UITableViewController, UITextF
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        //setup switches and text fields
         let defaults = UserDefaults.standard
         if let name = defaults.string(forKey: DefaultKeys.name) {
             nameTextFeild.text = name
@@ -59,9 +86,29 @@ class SettingsTableControllerTableViewController: UITableViewController, UITextF
             nameTextFeild.text = "Nick O'Teen"
         }
         
+        
+        normalRandomSwitch.isOn = defaults.bool(forKey: DefaultKeys.normalRandom)
+        normalHighlightSwitch.isOn = defaults.bool(forKey: DefaultKeys.normalHighlightNext)
+        sliderRandomSwitch.isOn = defaults.bool(forKey: DefaultKeys.sliderRandom)
+        
+        
+        
         //setup multi options
-        setupOptions(button: normalGoalsButton, options: ["2", "3", "4", "5"], title: "Number of Repetitions (Goal)", userDefaultsKey: DefaultKeys.normalReps)
+        setupOptions(button: normalGoalsButton, options: ["No goal", "3", "5", "20", "20"], title: "Number of Repetitions (Goal)", userDefaultsKey: DefaultKeys.normalReps)
+        
         setupOptions(button: normalTimeButton, options: ["No time limit", "10", "30", "60"], title: "Time limit (seconds)", userDefaultsKey: DefaultKeys.normalTime)
+        
+        setupOptions(button: normalNumberButton, options: ["2", "3", "4", "5"], title: "Number of buttons", userDefaultsKey: DefaultKeys.normalNumButtons)
+        
+        setupOptions(button: normalSizeButton, options: ["S", "M", "L", "XL"], title: "Button Size", userDefaultsKey: DefaultKeys.normalSize)
+        
+        setupOptions(button: sliderRepsButton, options: ["No goal", "3", "5", "20", "20"], title: "Number of Repetitions (Goal)", userDefaultsKey: DefaultKeys.sliderReps)
+        
+        setupOptions(button: sliderTimeButton, options: ["No time limit", "10", "30", "60"], title: "Time limit (seconds)", userDefaultsKey: DefaultKeys.sliderTime)
+        
+        setupOptions(button: sliderNumNotchesButton, options: ["2", "3", "4", "5"], title: "Number of Notches", userDefaultsKey: DefaultKeys.sliderNotches)
+        
+    
     }
     
     
