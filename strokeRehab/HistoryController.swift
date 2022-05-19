@@ -12,6 +12,9 @@ import FirebaseFirestoreSwift
 
 class HistoryController: UIViewController {
 
+    
+    
+    
     @IBOutlet var tableView: UITableView!
     
     @IBAction func shareButton(_ sender: Any) {
@@ -36,6 +39,7 @@ class HistoryController: UIViewController {
     }
     
     var records: [Record] = []
+    var selectedRowID = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -77,6 +81,17 @@ class HistoryController: UIViewController {
         
         
     }
+    
+    //send the record over
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "goToRecordScreen"
+        {
+            if let recordScreen = segue.destination as? RecordUIViewController
+            {
+                recordScreen.record = records[selectedRowID]
+            }
+        }
+    }
 
 
 }
@@ -84,7 +99,8 @@ class HistoryController: UIViewController {
 
 extension HistoryController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print("Youo tapped ", indexPath.row)
+        print("You tapped ", indexPath.row)
+        selectedRowID = indexPath.row
         
         self.performSegue(withIdentifier: "goToRecordScreen", sender: nil)
         

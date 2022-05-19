@@ -113,10 +113,10 @@
             </objects>
             <point key="canvasLocation" x="1163.768115942029" y="718.52678571428567"/>
         </scene>
-        <!--View Controller-->
+        <!--RecordUI View Controller-->
         <scene sceneID="2vG-4p-Vhy">
             <objects>
-                <viewController id="mIC-Ra-KnG" sceneMemberID="viewController">
+                <viewController id="mIC-Ra-KnG" customClass="RecordUIViewController" customModule="strokeRehab" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="qvp-oj-hNs">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="548"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -140,6 +140,9 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Ngx-45-QeD"/>
+                    <connections>
+                        <outlet property="title" destination="FfD-dx-AHc" id="42O-oy-p22"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jOO-kb-xbl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
