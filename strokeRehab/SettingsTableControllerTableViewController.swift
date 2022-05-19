@@ -10,6 +10,15 @@ import UIKit
 struct DefaultKeys {
     static let name = "nameStringKey"
     static let normalReps = "normalRepsStringKey"
+    static let normalTime = "normalTime"
+    static let normalNumButtons = "normalNum"
+    static let normalRandom = "normalRandom"
+    static let normalHighlightNext = "normalHighlightNext"
+    static let normalSize = "normalSize"
+    static let sliderReps = "sliderReps"
+    static let sliderTime = "sliderTime"
+    static let sliderRandom = "sliderRandom"
+    static let sliderNotches = "sliderNotches"
 }
 
 class SettingsTableControllerTableViewController: UITableViewController, UITextFieldDelegate {
@@ -18,6 +27,7 @@ class SettingsTableControllerTableViewController: UITableViewController, UITextF
     @IBOutlet var nameTextFeild: UITextField!
     
     @IBOutlet var normalGoalsButton: UIButton!
+    @IBOutlet var normalTimeButton: UIButton!
     
     
     @IBAction func nameEntered(_ sender: UITextField) {
@@ -51,6 +61,7 @@ class SettingsTableControllerTableViewController: UITableViewController, UITextF
         
         //setup multi options
         setupOptions(button: normalGoalsButton, options: ["2", "3", "4", "5"], title: "Number of Repetitions (Goal)", userDefaultsKey: DefaultKeys.normalReps)
+        setupOptions(button: normalTimeButton, options: ["No time limit", "10", "30", "60"], title: "Time limit (seconds)", userDefaultsKey: DefaultKeys.normalTime)
     }
     
     
@@ -97,12 +108,23 @@ class SettingsTableControllerTableViewController: UITableViewController, UITextF
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 2
+        return 3
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 1
+        
+        switch section {
+        case 0:
+            return 1
+        case 1:
+            return 6
+        case 2:
+            return 4
+        default:
+            return 0
+        }
+
     }
 
     /*
