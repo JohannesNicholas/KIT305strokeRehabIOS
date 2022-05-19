@@ -10,7 +10,6 @@ import UIKit
 class RecordUIViewController: UIViewController {
     @IBOutlet var recordTitle: UINavigationItem!
     
-    
     var record : Record? = nil
     
     override func viewDidLoad() {
