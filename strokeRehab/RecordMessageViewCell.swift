@@ -12,6 +12,8 @@ class RecordMessageViewCell: UITableViewCell {
     @IBOutlet var iconLabel: UILabel!
     @IBOutlet var secondsLabel: UILabel!
     @IBOutlet var messageLabel: UILabel!
+    
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

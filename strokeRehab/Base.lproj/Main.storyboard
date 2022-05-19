@@ -214,6 +214,10 @@
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="mIC-Ra-KnG" id="3DX-pE-WNA"/>
+                                    <outlet property="delegate" destination="mIC-Ra-KnG" id="T3h-hA-2wr"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="EHR-m0-eMQ"/>
@@ -240,6 +244,7 @@
                     <navigationItem key="navigationItem" id="Ngx-45-QeD"/>
                     <connections>
                         <outlet property="recordTitle" destination="FfD-dx-AHc" id="86o-Dq-MWY"/>
+                        <outlet property="tableView" destination="R4B-ZI-8JH" id="qpQ-zT-uiH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jOO-kb-xbl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
