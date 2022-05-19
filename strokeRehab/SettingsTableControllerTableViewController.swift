@@ -86,9 +86,13 @@ class SettingsTableControllerTableViewController: UITableViewController, UITextF
             nameTextFeild.text = "Nick O'Teen"
         }
         
-        
+        normalRandomSwitch.onTintColor = UIColor.tintColor
         normalRandomSwitch.isOn = defaults.object(forKey: DefaultKeys.normalRandom) as? Bool ?? true
+        
+        normalHighlightSwitch.onTintColor = UIColor.tintColor
         normalHighlightSwitch.isOn = defaults.object(forKey: DefaultKeys.normalHighlightNext) as? Bool ?? true
+        
+        sliderRandomSwitch.onTintColor = UIColor.tintColor
         sliderRandomSwitch.isOn = defaults.object(forKey: DefaultKeys.sliderRandom) as? Bool ?? true
         
         
