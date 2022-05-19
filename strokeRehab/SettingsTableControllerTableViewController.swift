@@ -87,9 +87,9 @@ class SettingsTableControllerTableViewController: UITableViewController, UITextF
         }
         
         
-        normalRandomSwitch.isOn = defaults.bool(forKey: DefaultKeys.normalRandom)
-        normalHighlightSwitch.isOn = defaults.bool(forKey: DefaultKeys.normalHighlightNext)
-        sliderRandomSwitch.isOn = defaults.bool(forKey: DefaultKeys.sliderRandom)
+        normalRandomSwitch.isOn = defaults.object(forKey: DefaultKeys.normalRandom) as? Bool ?? true
+        normalHighlightSwitch.isOn = defaults.object(forKey: DefaultKeys.normalHighlightNext) as? Bool ?? true
+        sliderRandomSwitch.isOn = defaults.object(forKey: DefaultKeys.sliderRandom) as? Bool ?? true
         
         
         

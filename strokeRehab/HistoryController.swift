@@ -85,6 +85,10 @@ class HistoryController: UIViewController {
 extension HistoryController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print("Youo tapped ", indexPath.row)
+        
+        self.performSegue(withIdentifier: "goToRecordScreen", sender: nil)
+        
+        
     }
     
 }
