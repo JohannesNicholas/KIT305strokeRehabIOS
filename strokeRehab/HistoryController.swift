@@ -69,6 +69,9 @@ class HistoryController: UIViewController {
                 if let err = err {
                     print("Error getting documents: \(err)")
                 } else {
+                    
+                    self.records = []
+                    
                     for document in querySnapshot!.documents {
                         print("\(document.documentID) => \(document.data())")
                         
