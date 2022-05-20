@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import Firebase
+import FirebaseFirestoreSwift
 
 class RecordUIViewController: UIViewController {
     @IBOutlet var tableView: UITableView!
@@ -22,7 +24,7 @@ class RecordUIViewController: UIViewController {
         for message in record?.messages ?? [] {
             var line = (message.message ?? "title") + ","
             line += (message.datetime?.description ?? "unknown") + ","
-            line += (message.correctPress == nil ? "?" : String(message.correctPress ?? false)) + ","
+            line += (message.correctPress == nil ? "nil" : String(message.correctPress ?? false)) + ","
             text += line + "\n"
         }
         
@@ -33,6 +35,71 @@ class RecordUIViewController: UIViewController {
         activityViewController.popoverPresentationController?.sourceView = self.view
         
         self.present(activityViewController, animated: true, completion: nil)
+    }
+    
+    
+    
+    @IBAction func deleteButtonPressed(_ sender: UIBarButtonItem) {
+        let deleteAlert = UIAlertController(title: "Delete?", message: "Are you sure you want to permanently delete this record?", preferredStyle: UIAlertController.Style.alert)
+        
+        deleteAlert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { (action: UIAlertAction!) in
+            print("OK button pressed")
+            
+            let db = Firestore.firestore()
+            print("\nINITIALIZED FIRESTORE APP for record deletion \(db.app.name)\n")
+            
+            db.collection("Records").document(self.record?.documentID ?? "").delete()
+            
+            let docRef = db.collection("totals").document("totals")
+
+            docRef.getDocument { (document, error) in
+                if let document = document, document.exists {
+                    let conversionResult = Result
+                    {
+                        try document.data(as: Totals.self)
+                    }
+
+                    //check if conversionResult is success or failure (i.e. was an exception/error thrown?
+                    switch conversionResult
+                    {
+                        //no problems (but could still be nil)
+                        case .success(var total):
+                            print("loaded!")
+                        
+                            var correctButtonPresses = 0
+                            for message in self.record?.messages ?? [] {
+                                if (message.correctPress == true){
+                                    correctButtonPresses += 1
+                                }
+                            }
+                        
+                        total.correctButtonPresses = (total.correctButtonPresses ?? 0) - Int32(correctButtonPresses)
+                            do {
+                                try db.collection("totals").document("totals").setData(from: total)
+                            } catch let error {
+                                print("Error writing city to Firestore: \(error)")
+                            }
+                        
+                        
+                            
+                            
+                        case .failure(let error):
+                            // A `Movie` value could not be initialized from the DocumentSnapshot.
+                            print("Error decoding data: \(error)")
+                    }
+                } else {
+                    print("Document does not exist")
+                }
+            }
+            
+            self.dismiss(animated: true, completion: nil)
+        }))
+
+        deleteAlert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: { (action: UIAlertAction!) in
+              
+        }))
+        
+        present(deleteAlert, animated: true, completion: nil)
     }
     
     

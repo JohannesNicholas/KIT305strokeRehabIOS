@@ -21,6 +21,7 @@
 		5C16F139282CC1B0007D5F53 /* strokeRehabUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C16F138282CC1B0007D5F53 /* strokeRehabUITestsLaunchTests.swift */; };
 		5C4ABFB62834B09800263FBB /* SettingsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C4ABFB52834B09800263FBB /* SettingsController.swift */; };
 		5C4ABFB82834B50F00263FBB /* SettingsTableControllerTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C4ABFB72834B50F00263FBB /* SettingsTableControllerTableViewController.swift */; };
+		5C71E24B283798C50041954A /* Totals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C71E24A283798C50041954A /* Totals.swift */; };
 		5C879C7928366B8E00C101FF /* RecordUIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C879C7828366B8E00C101FF /* RecordUIViewController.swift */; };
 		5C879C7B2836786100C101FF /* RecordMessageViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C879C7A2836786100C101FF /* RecordMessageViewCell.swift */; };
 		5CE8D79F28320901009C170C /* HistoryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CE8D79E28320901009C170C /* HistoryController.swift */; };
@@ -69,6 +70,7 @@
 		5C16F138282CC1B0007D5F53 /* strokeRehabUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = strokeRehabUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		5C4ABFB52834B09800263FBB /* SettingsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsController.swift; sourceTree = "<group>"; };
 		5C4ABFB72834B50F00263FBB /* SettingsTableControllerTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableControllerTableViewController.swift; sourceTree = "<group>"; };
+		5C71E24A283798C50041954A /* Totals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Totals.swift; sourceTree = "<group>"; };
 		5C879C7828366B8E00C101FF /* RecordUIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordUIViewController.swift; sourceTree = "<group>"; };
 		5C879C7A2836786100C101FF /* RecordMessageViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordMessageViewCell.swift; sourceTree = "<group>"; };
 		5CE8D79E28320901009C170C /* HistoryController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryController.swift; sourceTree = "<group>"; };
@@ -157,6 +159,7 @@
 				5C4ABFB52834B09800263FBB /* SettingsController.swift */,
 				5C879C7828366B8E00C101FF /* RecordUIViewController.swift */,
 				5C879C7A2836786100C101FF /* RecordMessageViewCell.swift */,
+				5C71E24A283798C50041954A /* Totals.swift */,
 			);
 			path = strokeRehab;
 			sourceTree = "<group>";
@@ -440,6 +443,7 @@
 				5C16F116282CC1AC007D5F53 /* AppDelegate.swift in Sources */,
 				5C16F118282CC1AC007D5F53 /* SceneDelegate.swift in Sources */,
 				5C0AA834283269C400ECE562 /* HistoryViewCell.swift in Sources */,
+				5C71E24B283798C50041954A /* Totals.swift in Sources */,
 				5C4ABFB82834B50F00263FBB /* SettingsTableControllerTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

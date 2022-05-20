@@ -131,7 +131,11 @@
                                     <navigationItem title="Record" id="FfD-dx-AHc">
                                         <barButtonItem key="leftBarButtonItem" title="Camera" image="camera" catalog="system" id="X1o-Tw-nid"/>
                                         <rightBarButtonItems>
-                                            <barButtonItem title="Delete" image="trash" catalog="system" id="3FM-Ga-7Cs"/>
+                                            <barButtonItem title="Delete" image="trash" catalog="system" id="3FM-Ga-7Cs">
+                                                <connections>
+                                                    <action selector="deleteButtonPressed:" destination="mIC-Ra-KnG" id="uFH-VB-Pcc"/>
+                                                </connections>
+                                            </barButtonItem>
                                             <barButtonItem title="Share" image="square.and.arrow.up" catalog="system" id="BeF-EX-JNX">
                                                 <connections>
                                                     <action selector="ShareButtonPressed:" destination="mIC-Ra-KnG" id="ZWF-Ea-N7F"/>
