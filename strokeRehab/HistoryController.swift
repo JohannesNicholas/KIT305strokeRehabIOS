@@ -12,10 +12,26 @@ import FirebaseFirestoreSwift
 
 class HistoryController: UIViewController {
 
+    var snapshotListener: ListenerRegistration? = nil
     
-    
+
     
     @IBOutlet var tableView: UITableView!
+    
+    
+    
+    
+    @IBOutlet var leftFilterOptions: UIDeselectableSegmentedControl!
+    
+    @IBOutlet var rightFilterOptions: UIDeselectableSegmentedControl!
+    
+    @IBAction func leftFilterOptionsValueChanged(_ sender: Any) {
+        setupRecordsListner()
+    }
+    
+    @IBAction func rightOptionsValueChanged(_ sender: Any) {
+        setupRecordsListner()
+    }
     
     
     
@@ -54,6 +70,9 @@ class HistoryController: UIViewController {
         tableView.dataSource = self
         
         
+        leftFilterOptions.selectedSegmentTintColor = UIColor.tintColor
+        
+        rightFilterOptions.selectedSegmentTintColor = UIColor.tintColor
         
         
         setupRecordsListner()
@@ -63,9 +82,39 @@ class HistoryController: UIViewController {
     
     
     func setupRecordsListner() {
+        
+        if let sl = snapshotListener {
+            sl.remove()
+        }
+        
+        
         let db = Firestore.firestore()
         print("\nINITIALIZED FIRESTORE APP \(db.app.name)\n")
-        db.collection("Records").addSnapshotListener() { (querySnapshot, err) in
+        
+        
+        
+        
+        var query: Query = db.collection("Records")
+        
+        
+        //filter options
+        if leftFilterOptions.selectedSegmentIndex == 0 {
+            query = query.whereField("title", isEqualTo: "🌐 Normal")
+        }
+        if leftFilterOptions.selectedSegmentIndex == 1 {
+            query = query.whereField("title", isEqualTo: "🕹️ Slider")
+        }
+        if rightFilterOptions.selectedSegmentIndex == 0 {
+            query = query.whereField("goals", isEqualTo: false)
+        }
+        if rightFilterOptions.selectedSegmentIndex == 1 {
+            query = query.whereField("goals", isEqualTo: true)
+        }
+        
+        
+        
+        
+        snapshotListener = query.addSnapshotListener() { (querySnapshot, err) in
                 if let err = err {
                     print("Error getting documents: \(err)")
                 } else {

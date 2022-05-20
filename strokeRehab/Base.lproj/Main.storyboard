@@ -32,29 +32,8 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="xxx correct presses in total" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2kJ-6z-oag">
-                                <rect key="frame" x="0.0" y="52" width="320" height="21"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="21" id="mBA-aH-U6C"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" systemColor="opaqueSeparatorColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" apportionsSegmentWidthsByContent="YES" segmentControlStyle="plain" selectedSegmentIndex="3" translatesAutoresizingMaskIntoConstraints="NO" id="r6s-Sd-34J">
-                                <rect key="frame" x="0.0" y="81" width="320" height="31"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="Afs-dS-NMk"/>
-                                </constraints>
-                                <segments>
-                                    <segment title="🌐 Normal"/>
-                                    <segment title="🕹 Slider"/>
-                                    <segment title="∞ Free-play"/>
-                                    <segment title="🏆 Goals"/>
-                                </segments>
-                            </segmentedControl>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="yBz-8L-Iyh">
-                                <rect key="frame" x="0.0" y="111" width="320" height="408"/>
+                                <rect key="frame" x="0.0" y="103" width="320" height="465"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" id="mXV-if-doY" customClass="HistoryViewCell" customModule="strokeRehab" customModuleProvider="target">
@@ -112,27 +91,66 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="xxx correct presses in total" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2kJ-6z-oag">
+                                <rect key="frame" x="0.0" y="52" width="320" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="mBA-aH-U6C"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" systemColor="opaqueSeparatorColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5CN-T5-1Zl">
+                                <rect key="frame" x="0.0" y="73" width="320" height="30"/>
+                                <subviews>
+                                    <segmentedControl opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" apportionsSegmentWidthsByContent="YES" segmentControlStyle="plain" translatesAutoresizingMaskIntoConstraints="NO" id="r6s-Sd-34J" customClass="UIDeselectableSegmentedControl" customModule="strokeRehab" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="147" height="31"/>
+                                        <segments>
+                                            <segment title="🌐 Normal"/>
+                                            <segment title="🕹 Slider"/>
+                                        </segments>
+                                        <connections>
+                                            <action selector="leftFilterOptionsValueChanged:" destination="JL7-gq-RVv" eventType="valueChanged" id="din-36-vPz"/>
+                                        </connections>
+                                    </segmentedControl>
+                                    <segmentedControl opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" apportionsSegmentWidthsByContent="YES" segmentControlStyle="plain" translatesAutoresizingMaskIntoConstraints="NO" id="OS5-bc-CAj" customClass="UIDeselectableSegmentedControl" customModule="strokeRehab" customModuleProvider="target">
+                                        <rect key="frame" x="147" y="0.0" width="173" height="31"/>
+                                        <segments>
+                                            <segment title="∞ Free-play"/>
+                                            <segment title="🏆 Goals "/>
+                                        </segments>
+                                        <connections>
+                                            <action selector="rightOptionsValueChanged:" destination="JL7-gq-RVv" eventType="valueChanged" id="ybm-Wa-vND"/>
+                                        </connections>
+                                    </segmentedControl>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="w1z-71-GWa"/>
+                                </constraints>
+                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="nXr-Jw-0Wa"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstAttribute="bottom" secondItem="yBz-8L-Iyh" secondAttribute="bottom" id="2RU-LD-JUP"/>
+                            <constraint firstItem="yBz-8L-Iyh" firstAttribute="top" secondItem="5CN-T5-1Zl" secondAttribute="bottom" id="4LQ-cG-qpw"/>
                             <constraint firstItem="2kJ-6z-oag" firstAttribute="leading" secondItem="nXr-Jw-0Wa" secondAttribute="leading" id="ERf-xC-dpZ"/>
+                            <constraint firstItem="nXr-Jw-0Wa" firstAttribute="trailing" secondItem="yBz-8L-Iyh" secondAttribute="trailing" id="F2w-Y1-3WK"/>
                             <constraint firstItem="2kJ-6z-oag" firstAttribute="top" secondItem="PX3-Dz-X2n" secondAttribute="bottom" constant="8" id="FMX-mw-IBe"/>
-                            <constraint firstItem="r6s-Sd-34J" firstAttribute="leading" secondItem="nXr-Jw-0Wa" secondAttribute="leading" id="JLz-lb-346"/>
-                            <constraint firstItem="r6s-Sd-34J" firstAttribute="top" secondItem="2kJ-6z-oag" secondAttribute="bottom" constant="8" id="L5e-WW-uz4"/>
-                            <constraint firstItem="yBz-8L-Iyh" firstAttribute="top" secondItem="r6s-Sd-34J" secondAttribute="bottom" id="N0o-Eh-aoW"/>
                             <constraint firstItem="PX3-Dz-X2n" firstAttribute="top" secondItem="nXr-Jw-0Wa" secondAttribute="top" id="PYv-Re-cgR"/>
                             <constraint firstItem="nXr-Jw-0Wa" firstAttribute="trailing" secondItem="2kJ-6z-oag" secondAttribute="trailing" id="Snh-RX-ttY"/>
+                            <constraint firstItem="5CN-T5-1Zl" firstAttribute="leading" secondItem="nXr-Jw-0Wa" secondAttribute="leading" id="WHb-Fm-HGE"/>
                             <constraint firstItem="PX3-Dz-X2n" firstAttribute="trailing" secondItem="nXr-Jw-0Wa" secondAttribute="trailing" id="aYw-e1-pRd"/>
                             <constraint firstItem="PX3-Dz-X2n" firstAttribute="leading" secondItem="nXr-Jw-0Wa" secondAttribute="leading" id="af6-Nw-CsC"/>
-                            <constraint firstItem="nXr-Jw-0Wa" firstAttribute="bottom" secondItem="yBz-8L-Iyh" secondAttribute="bottom" id="kHT-f4-mvS"/>
-                            <constraint firstItem="yBz-8L-Iyh" firstAttribute="leading" secondItem="nXr-Jw-0Wa" secondAttribute="leading" id="qvH-pp-t7k"/>
-                            <constraint firstItem="yBz-8L-Iyh" firstAttribute="trailing" secondItem="nXr-Jw-0Wa" secondAttribute="trailing" id="rdE-SQ-JAX"/>
-                            <constraint firstItem="nXr-Jw-0Wa" firstAttribute="trailing" secondItem="r6s-Sd-34J" secondAttribute="trailing" id="vIn-pd-epN"/>
+                            <constraint firstItem="5CN-T5-1Zl" firstAttribute="top" secondItem="2kJ-6z-oag" secondAttribute="bottom" id="d7F-90-zb8"/>
+                            <constraint firstItem="nXr-Jw-0Wa" firstAttribute="trailing" secondItem="5CN-T5-1Zl" secondAttribute="trailing" id="mjc-Pb-Dg7"/>
+                            <constraint firstItem="yBz-8L-Iyh" firstAttribute="leading" secondItem="OKd-yH-PhO" secondAttribute="leading" id="v6O-QS-PBy"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" systemItem="history" id="AMx-El-Ocz"/>
                     <connections>
+                        <outlet property="leftFilterOptions" destination="r6s-Sd-34J" id="PQz-Z3-CeH"/>
+                        <outlet property="rightFilterOptions" destination="OS5-bc-CAj" id="cyj-bG-hsU"/>
                         <outlet property="tableView" destination="yBz-8L-Iyh" id="Qbl-p6-2hh"/>
                         <segue destination="mIC-Ra-KnG" kind="show" identifier="goToRecordScreen" id="0Xn-nP-2rL"/>
                     </connections>
