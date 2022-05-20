@@ -17,6 +17,9 @@ class HistoryController: UIViewController {
     
     @IBOutlet var tableView: UITableView!
     
+    
+    
+    
     @IBAction func shareButton(_ sender: Any) {
         var text = "title, start, end, repetition count, presses count\n"
         
@@ -36,10 +39,13 @@ class HistoryController: UIViewController {
         activityViewController.popoverPresentationController?.sourceView = self.view
         
         self.present(activityViewController, animated: true, completion: nil)
+        
+        
     }
     
     var records: [Record] = []
     var selectedRowID = 0
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -47,10 +53,19 @@ class HistoryController: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
         
+        
+        
+        
+        setupRecordsListner()
+        
+    }
+    
+    
+    
+    func setupRecordsListner() {
         let db = Firestore.firestore()
         print("\nINITIALIZED FIRESTORE APP \(db.app.name)\n")
-        
-        db.collection("Records").getDocuments() { (querySnapshot, err) in
+        db.collection("Records").addSnapshotListener() { (querySnapshot, err) in
                 if let err = err {
                     print("Error getting documents: \(err)")
                 } else {
@@ -78,9 +93,9 @@ class HistoryController: UIViewController {
                     self.tableView.reloadData()
                 }
         }
-        
-        
     }
+    
+    
     
     //send the record over
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
