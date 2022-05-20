@@ -11,6 +11,10 @@ class RecordUIViewController: UIViewController {
     @IBOutlet var tableView: UITableView!
     @IBOutlet var recordTitle: UINavigationItem!
     
+    @IBOutlet weak var timeAndDateLabel: UILabel!
+    @IBOutlet weak var repsInSecondsLabel: UILabel!
+    @IBOutlet weak var correctPressesLabel: UILabel!
+    
     var record : Record? = nil
     
     override func viewDidLoad() {
@@ -19,6 +23,56 @@ class RecordUIViewController: UIViewController {
         print(record?.title ?? "Error, nil value")
         
         recordTitle.title = record?.title ?? "Untitled"
+        
+        
+        
+        //date formatter
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat="dd MMM yyyy - hh:mm:ss a"
+        timeAndDateLabel.text = dateFormatter.string(from: record?.start?.dateValue() ?? Date())
+        
+        
+        
+        //seconds in rep
+        if let lastMessage = record?.messages?.last {
+            var text = ""
+            if (lastMessage.rep == nil) {
+                text += "?"
+            }
+            else {
+                text += String(lastMessage.rep! - 1)
+            }
+            
+            text += " repetitions in "
+            
+            if lastMessage.datetime == nil || record?.start == nil {
+                text += "⏰?"
+            }
+            else {
+                let timeToComplete = Float(lastMessage.datetime!.dateValue().timeIntervalSince1970) - Float((record?.start!.dateValue().timeIntervalSince1970)!)
+                text += String(format: " %.2f seconds", timeToComplete)
+            }
+            
+            repsInSecondsLabel.text = text
+        }
+        
+        
+        
+        
+        
+        
+        
+        
+        //correct button presse
+        var correctButtonPresses = 0
+        for message in record?.messages ?? [] {
+            if (message.correctPress == true){
+                correctButtonPresses += 1
+            }
+        }
+        correctPressesLabel.text = "\(correctButtonPresses) correct presses"
+        
+        
     }
     
 

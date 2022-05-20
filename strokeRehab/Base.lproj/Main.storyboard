@@ -243,8 +243,11 @@
                     </view>
                     <navigationItem key="navigationItem" id="Ngx-45-QeD"/>
                     <connections>
+                        <outlet property="correctPressesLabel" destination="3GG-Hk-ZPY" id="uHd-S8-f0T"/>
                         <outlet property="recordTitle" destination="FfD-dx-AHc" id="86o-Dq-MWY"/>
+                        <outlet property="repsInSecondsLabel" destination="ZTG-ZZ-Ow9" id="LLu-sp-Y11"/>
                         <outlet property="tableView" destination="R4B-ZI-8JH" id="qpQ-zT-uiH"/>
+                        <outlet property="timeAndDateLabel" destination="Jit-Ul-Rs2" id="Xir-lL-uzr"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jOO-kb-xbl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
