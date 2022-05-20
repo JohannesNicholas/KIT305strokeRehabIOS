@@ -15,6 +15,27 @@ class RecordUIViewController: UIViewController {
     @IBOutlet weak var repsInSecondsLabel: UILabel!
     @IBOutlet weak var correctPressesLabel: UILabel!
     
+    @IBAction func ShareButtonPressed(_ sender: UIBarButtonItem) {
+        
+        var text = "message, timestamp, correct press\n"
+        
+        for message in record?.messages ?? [] {
+            var line = (message.message ?? "title") + ","
+            line += (message.datetime?.description ?? "unknown") + ","
+            line += (message.correctPress == nil ? "?" : String(message.correctPress ?? false)) + ","
+            text += line + "\n"
+        }
+        
+        
+        
+        let textToShare = [ text ]
+        let activityViewController = UIActivityViewController(activityItems: textToShare, applicationActivities: nil)
+        activityViewController.popoverPresentationController?.sourceView = self.view
+        
+        self.present(activityViewController, animated: true, completion: nil)
+    }
+    
+    
     var record : Record? = nil
     
     override func viewDidLoad() {
@@ -49,8 +70,8 @@ class RecordUIViewController: UIViewController {
                 text += "⏰?"
             }
             else {
-                let timeToComplete = Float(lastMessage.datetime!.dateValue().timeIntervalSince1970) - Float((record?.start!.dateValue().timeIntervalSince1970)!)
-                text += String(format: " %.2f seconds", timeToComplete)
+                let timeToComplete = Float(lastMessage.datetime!.dateValue().timeIntervalSince(record?.start?.dateValue() ?? Date()))
+                text += String(format: " %.3f seconds", timeToComplete)
             }
             
             repsInSecondsLabel.text = text

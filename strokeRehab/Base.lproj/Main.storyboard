@@ -132,7 +132,11 @@
                                         <barButtonItem key="leftBarButtonItem" title="Camera" image="camera" catalog="system" id="X1o-Tw-nid"/>
                                         <rightBarButtonItems>
                                             <barButtonItem title="Delete" image="trash" catalog="system" id="3FM-Ga-7Cs"/>
-                                            <barButtonItem title="Share" image="square.and.arrow.up" catalog="system" id="BeF-EX-JNX"/>
+                                            <barButtonItem title="Share" image="square.and.arrow.up" catalog="system" id="BeF-EX-JNX">
+                                                <connections>
+                                                    <action selector="ShareButtonPressed:" destination="mIC-Ra-KnG" id="ZWF-Ea-N7F"/>
+                                                </connections>
+                                            </barButtonItem>
                                         </rightBarButtonItems>
                                     </navigationItem>
                                 </items>
@@ -143,7 +147,7 @@
                                     <constraint firstAttribute="height" constant="21" id="GkI-nb-HD0"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
+                                <color key="textColor" systemColor="opaqueSeparatorColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="X repetitions in x.xx seconds" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZTG-ZZ-Ow9">
