@@ -826,32 +826,67 @@
                                     <navigationItem title="Home" id="a0h-1s-3ur"/>
                                 </items>
                             </navigationBar>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5ly-88-HhD">
-                                <rect key="frame" x="16" y="87" width="288" height="128"/>
-                                <color key="backgroundColor" systemColor="opaqueSeparatorColor"/>
-                            </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tgq-6N-KKO">
-                                <rect key="frame" x="39" y="112" width="244" height="31"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="🌐 Normal"/>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dAo-Y0-15D">
-                                <rect key="frame" x="39" y="162" width="244" height="31"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="🕹 Slider"/>
-                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="32" translatesAutoresizingMaskIntoConstraints="NO" id="wKv-rS-8vU">
+                                <rect key="frame" x="16" y="76" width="288" height="251"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="9" translatesAutoresizingMaskIntoConstraints="NO" id="1cw-jL-cEB">
+                                        <rect key="frame" x="0.0" y="0.0" width="288" height="109.5"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="🏆 Exercise with Goals 🏆" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bX7-nA-7Cv">
+                                                <rect key="frame" x="8" y="8" width="272" height="13.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tgq-6N-KKO">
+                                                <rect key="frame" x="8" y="30.5" width="272" height="31"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="filled" title="🌐 Normal"/>
+                                            </button>
+                                            <button opaque="NO" alpha="0.65000000000000002" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dAo-Y0-15D">
+                                                <rect key="frame" x="8" y="70.5" width="272" height="31"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="filled" title="🕹 Slider"/>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemGray3Color"/>
+                                        <edgeInsets key="layoutMargins" top="8" left="8" bottom="8" right="8"/>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="9" translatesAutoresizingMaskIntoConstraints="NO" id="x6w-V1-Ddw">
+                                        <rect key="frame" x="0.0" y="141.5" width="288" height="109.5"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="∞ Free-play ∞" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2aR-lM-M6c">
+                                                <rect key="frame" x="8" y="8" width="272" height="13.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <button opaque="NO" alpha="0.65000000000000002" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KZb-s4-h9S">
+                                                <rect key="frame" x="8" y="30.5" width="272" height="31"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="filled" title="🌐 Normal"/>
+                                            </button>
+                                            <button opaque="NO" alpha="0.65000000000000002" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fY6-Y3-XcY">
+                                                <rect key="frame" x="8" y="70.5" width="272" height="31"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="filled" title="🕹 Slider"/>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemGray3Color"/>
+                                        <edgeInsets key="layoutMargins" top="8" left="8" bottom="8" right="8"/>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="jdq-ed-1Rr"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="znP-4v-iL3" firstAttribute="trailing" secondItem="jdq-ed-1Rr" secondAttribute="trailing" id="83T-gr-2d3"/>
                             <constraint firstItem="znP-4v-iL3" firstAttribute="top" secondItem="jdq-ed-1Rr" secondAttribute="top" id="JPg-lc-MSn"/>
-                            <constraint firstItem="jdq-ed-1Rr" firstAttribute="trailing" secondItem="5ly-88-HhD" secondAttribute="trailing" constant="16" id="JRY-gR-p02"/>
-                            <constraint firstItem="5ly-88-HhD" firstAttribute="leading" secondItem="jdq-ed-1Rr" secondAttribute="leading" constant="16" id="Nr6-Eu-e2u"/>
+                            <constraint firstItem="wKv-rS-8vU" firstAttribute="top" secondItem="znP-4v-iL3" secondAttribute="bottom" constant="32" id="ORc-AR-gLv"/>
+                            <constraint firstItem="wKv-rS-8vU" firstAttribute="leading" secondItem="jdq-ed-1Rr" secondAttribute="leading" constant="16" id="TWl-BE-2uf"/>
+                            <constraint firstItem="jdq-ed-1Rr" firstAttribute="trailing" secondItem="wKv-rS-8vU" secondAttribute="trailing" constant="16" id="TZw-YH-rdi"/>
                             <constraint firstItem="znP-4v-iL3" firstAttribute="leading" secondItem="jdq-ed-1Rr" secondAttribute="leading" id="ecZ-lm-vMg"/>
-                            <constraint firstItem="5ly-88-HhD" firstAttribute="top" secondItem="znP-4v-iL3" secondAttribute="bottom" constant="64" id="rtf-CB-3xs"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Home" image="house.fill" catalog="system" id="pnv-sM-zhf"/>
@@ -895,6 +930,9 @@
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGray3Color">
+            <color red="0.7803921568627451" green="0.7803921568627451" blue="0.80000000000000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
