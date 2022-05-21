@@ -13,6 +13,7 @@ import FirebaseFirestoreSwift
 class HistoryController: UIViewController {
 
     var snapshotListener: ListenerRegistration? = nil
+    var totalsSnapshotListener: ListenerRegistration? = nil
     
 
     
@@ -34,6 +35,7 @@ class HistoryController: UIViewController {
     }
     
     
+    @IBOutlet var correctPressesLabel: UILabel!
     
     
     @IBAction func shareButton(_ sender: Any) {
@@ -83,7 +85,12 @@ class HistoryController: UIViewController {
     
     func setupRecordsListner() {
         
+        //stop any existing listeners
         if let sl = snapshotListener {
+            sl.remove()
+        }
+        
+        if let sl = totalsSnapshotListener {
             sl.remove()
         }
         
@@ -92,8 +99,45 @@ class HistoryController: UIViewController {
         print("\nINITIALIZED FIRESTORE APP \(db.app.name)\n")
         
         
+        //totals
+        totalsSnapshotListener = db.collection("totals").document("totals").addSnapshotListener() { (documentSnapshot, err) in
+            if let err = err {
+                print("Error getting document: \(err)")
+            } else {
+                
+                guard let document = documentSnapshot else {
+                            print("Error fetching document: \(err!)")
+                            return
+                        }
+                
+                let conversionResult = Result
+                {
+                    try document.data(as: Totals.self)
+                }
+
+                //check if conversionResult is success or failure (i.e. was an exception/error thrown?
+                switch conversionResult
+                {
+                    //no problems (but could still be nil)
+                    case .success(let total):
+                        print("Totals doc: \(total)")
+                    self.correctPressesLabel.text = String(total.correctButtonPresses ?? 0) + " correct presses in total"
+                        
+                    case .failure(let error):
+                        // A `Movie` value could not be initialized from the DocumentSnapshot.
+                        print("Error decoding movie: \(error)")
+                }
+                
+                
+            }
+        }
+    
         
         
+        
+        
+        
+        //all records
         var query: Query = db.collection("Records")
         
         

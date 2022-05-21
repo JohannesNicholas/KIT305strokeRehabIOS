@@ -149,6 +149,7 @@
                     </view>
                     <tabBarItem key="tabBarItem" systemItem="history" id="AMx-El-Ocz"/>
                     <connections>
+                        <outlet property="correctPressesLabel" destination="2kJ-6z-oag" id="PWf-qK-wo0"/>
                         <outlet property="leftFilterOptions" destination="r6s-Sd-34J" id="PQz-Z3-CeH"/>
                         <outlet property="rightFilterOptions" destination="OS5-bc-CAj" id="cyj-bG-hsU"/>
                         <outlet property="tableView" destination="yBz-8L-Iyh" id="Qbl-p6-2hh"/>
@@ -174,7 +175,11 @@
                                 </constraints>
                                 <items>
                                     <navigationItem title="Record" id="FfD-dx-AHc">
-                                        <barButtonItem key="leftBarButtonItem" title="Camera" image="camera" catalog="system" id="X1o-Tw-nid"/>
+                                        <barButtonItem key="leftBarButtonItem" title="Camera" image="camera" catalog="system" id="X1o-Tw-nid">
+                                            <connections>
+                                                <action selector="cameraButtonPressed:" destination="mIC-Ra-KnG" id="0g4-AG-h92"/>
+                                            </connections>
+                                        </barButtonItem>
                                         <rightBarButtonItems>
                                             <barButtonItem title="Delete" image="trash" catalog="system" id="3FM-Ga-7Cs">
                                                 <connections>

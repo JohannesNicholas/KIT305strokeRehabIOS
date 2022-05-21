@@ -9,13 +9,29 @@ import UIKit
 import Firebase
 import FirebaseFirestoreSwift
 
-class RecordUIViewController: UIViewController {
+class RecordUIViewController: UIViewController, UIImagePickerControllerDelegate & UINavigationControllerDelegate {
     @IBOutlet var tableView: UITableView!
     @IBOutlet var recordTitle: UINavigationItem!
     
     @IBOutlet weak var timeAndDateLabel: UILabel!
     @IBOutlet weak var repsInSecondsLabel: UILabel!
     @IBOutlet weak var correctPressesLabel: UILabel!
+    
+    
+    var imagePicker = UIImagePickerController()
+    @IBAction func cameraButtonPressed(_ sender: UIBarButtonItem) {
+        if UIImagePickerController.isSourceTypeAvailable(.savedPhotosAlbum){
+                    print("Button capture")
+
+                    imagePicker.delegate = self
+                    imagePicker.sourceType = .savedPhotosAlbum
+                    imagePicker.allowsEditing = false
+
+                    present(imagePicker, animated: true, completion: nil)
+                }
+    
+    }
+    
     
     @IBAction func ShareButtonPressed(_ sender: UIBarButtonItem) {
         
