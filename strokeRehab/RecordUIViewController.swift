@@ -40,14 +40,42 @@ class RecordUIViewController: UIViewController, UIImagePickerControllerDelegate 
 
         imageView.image = image
         
-        let imageName = UUID().uuidString
-//        let imagePath = getDocumentsDirectory().appendingPathComponent(imageName)
-//
-//        if let jpegData = image.jpegData(compressionQuality: 0.8) {
-//            try? jpegData.write(to: imagePath)
-//        }
-
+        
+        let success = saveImage(image: image)
+        print("save image success:", success)
+        
+        
         imagePicker.dismiss(animated: true)
+    }
+    
+    
+    func saveImage(image: UIImage) -> Bool {
+        guard let data = image.jpegData(compressionQuality: 1) ?? image.pngData() else {
+            return false
+        }
+        guard let directory = try? FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: false) as NSURL else {
+            return false
+        }
+        do {
+            try data.write(to: directory.appendingPathComponent(record?.documentID ?? "")!)
+            return true
+        } catch {
+            print(error.localizedDescription)
+            return false
+        }
+    }
+    
+    func getSavedImage(named: String) -> UIImage? {
+        if let dir = try? FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: false) {
+            return UIImage(contentsOfFile: URL(fileURLWithPath: dir.absoluteString).appendingPathComponent(named).path)
+        }
+        return nil
+    }
+    
+    
+    func getDocumentsDirectory() -> URL {
+        let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
+        return paths[0]
     }
     
     
@@ -147,6 +175,12 @@ class RecordUIViewController: UIViewController, UIImagePickerControllerDelegate 
         print(record?.title ?? "Error, nil value")
         
         recordTitle.title = record?.title ?? "Untitled"
+        
+        //load the image
+        if let image = getSavedImage(named: record?.documentID ?? "") {
+            imageView.image = image
+        }
+        
         
         
         
