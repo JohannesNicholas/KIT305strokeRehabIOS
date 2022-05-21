@@ -19,6 +19,7 @@ class RecordUIViewController: UIViewController, UIImagePickerControllerDelegate 
     
     
     var imagePicker = UIImagePickerController()
+    @IBOutlet var imageView: UIImageView!
     @IBAction func cameraButtonPressed(_ sender: UIBarButtonItem) {
         if UIImagePickerController.isSourceTypeAvailable(.savedPhotosAlbum){
                     print("Button capture")
@@ -31,6 +32,25 @@ class RecordUIViewController: UIViewController, UIImagePickerControllerDelegate 
                 }
     
     }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        print("done selecting!")
+        print(info)
+        guard let image = info[.originalImage] as? UIImage else { return }
+
+        imageView.image = image
+        
+        let imageName = UUID().uuidString
+//        let imagePath = getDocumentsDirectory().appendingPathComponent(imageName)
+//
+//        if let jpegData = image.jpegData(compressionQuality: 0.8) {
+//            try? jpegData.write(to: imagePath)
+//        }
+
+        imagePicker.dismiss(animated: true)
+    }
+    
+    
     
     
     @IBAction func ShareButtonPressed(_ sender: UIBarButtonItem) {
