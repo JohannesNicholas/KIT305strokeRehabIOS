@@ -157,12 +157,6 @@ class buttonGameController: UIViewController {
         newRound()
         
         
-        
-        do {
-            try db.collection("Records").document(recordData.documentID ?? "error").setData(from: recordData)
-        } catch let error {
-            print("Error writing record to Firestore: \(error)")
-        }
     }
     
     
@@ -174,9 +168,11 @@ class buttonGameController: UIViewController {
     
     //called when a button is pressed, passed the number of the button
     func buttonPressed(number: Int) {
+        print("button pressed: ", number)
+        
         record(message: "\(number) Pressed", correctPress: (number == nextNumber))
         
-        if number == nextNumber {
+        if Int(buttonUIs[number-1].title(for: .normal) ?? "") == nextNumber {
             
             if (nextNumber == numberOfButtons) {
                 newRound()
@@ -193,6 +189,9 @@ class buttonGameController: UIViewController {
     
     //adds a message into the record and stores it in the database
     func record(message: String, correctPress: Bool? = nil) {
+        
+        print("saving record: ", message)
+        
         recordData.messages?.append(
             Message(
                 correctPress: correctPress,
@@ -295,13 +294,13 @@ class buttonGameController: UIViewController {
             numbers.shuffle()
         }
         
-        for i in (0 ..< 4) {
+        for i in (0 ... 4) {
             let button = buttonUIs[i]
             let number = numbers[i]
             
             if (number <= numberOfButtons){
                 button.layer.isHidden = false
-                button.titleLabel?.text = String(number)
+                button.setTitle(String(number), for: .normal)
                 
             }
             else {
@@ -316,12 +315,12 @@ class buttonGameController: UIViewController {
     
     //highlights the next button to be pressed, de highlights the others
     func highlightNextNum() {
-        for i in (0 ..< 4) {
+        for i in (0 ... 4) {
             let button = buttonUIs[i]
             
             button.alpha = 1
             
-            if button.titleLabel?.text != String(nextNumber) && highlightNextButton {
+            if button.title(for: .normal) != String(nextNumber) && highlightNextButton {
                 button.alpha = 0.75
             }
         }
