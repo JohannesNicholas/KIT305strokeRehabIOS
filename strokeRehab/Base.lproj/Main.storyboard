@@ -979,6 +979,9 @@
                                                     </userDefinedRuntimeAttribute>
                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="clipsToBounds" value="YES"/>
                                                 </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="buttonEpressed:" destination="ocx-Kr-PeP" eventType="touchUpInside" id="BBM-vS-3Yv"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -999,6 +1002,9 @@
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="clipsToBounds" value="YES"/>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="buttonApressed:" destination="ocx-Kr-PeP" eventType="touchUpInside" id="A3f-3O-p26"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oNE-Jy-XFF">
                                 <rect key="frame" x="254" y="136.5" width="50" height="50"/>
@@ -1015,6 +1021,9 @@
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="clipsToBounds" value="YES"/>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="buttonBpressed:" destination="ocx-Kr-PeP" eventType="touchUpInside" id="5Jc-Rr-CKd"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BwL-c7-aJ4">
                                 <rect key="frame" x="16" y="502" width="50" height="50"/>
@@ -1031,6 +1040,9 @@
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="clipsToBounds" value="YES"/>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="buttonCpressed:" destination="ocx-Kr-PeP" eventType="touchUpInside" id="FUB-Vn-xjk"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vQ2-XT-Fo3">
                                 <rect key="frame" x="254" y="502" width="50" height="50"/>
@@ -1047,6 +1059,9 @@
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="clipsToBounds" value="YES"/>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="buttonDpressed:" destination="ocx-Kr-PeP" eventType="touchUpInside" id="4yy-t3-xAP"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="G8L-Ke-Hcd"/>
@@ -1094,6 +1109,9 @@
                         <outlet property="buttonE" destination="Dbu-Vv-yed" id="w1D-PG-YVM"/>
                         <outlet property="buttonEHeight" destination="Bsj-Kh-7IE" id="1Su-Xn-Fgb"/>
                         <outlet property="buttonEWidth" destination="T57-PE-VJQ" id="daV-Rz-ti3"/>
+                        <outlet property="scoreLabel" destination="mLP-AY-Cyo" id="vth-7B-Ece"/>
+                        <outlet property="timeBar" destination="Vaa-g6-otS" id="Jnk-j4-1va"/>
+                        <outlet property="timeLabel" destination="Lfb-gH-uff" id="Lh7-fI-wA3"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Sdw-oK-5gE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
