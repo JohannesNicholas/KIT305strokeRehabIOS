@@ -37,19 +37,19 @@ class buttonGameController: UIViewController {
     var buttonSizeConstraints : [NSLayoutConstraint] = []
     
     @IBAction func buttonApressed(_ sender: Any) {
-        buttonPressed(number: 1)
+        buttonPressed(btnIndex: 1)
     }
     @IBAction func buttonBpressed(_ sender: Any) {
-        buttonPressed(number: 2)
+        buttonPressed(btnIndex: 2)
     }
     @IBAction func buttonCpressed(_ sender: Any) {
-        buttonPressed(number: 3)
+        buttonPressed(btnIndex: 3)
     }
     @IBAction func buttonDpressed(_ sender: Any) {
-        buttonPressed(number: 4)
+        buttonPressed(btnIndex: 4)
     }
     @IBAction func buttonEpressed(_ sender: Any) {
-        buttonPressed(number: 5)
+        buttonPressed(btnIndex: 5)
     }
     
     
@@ -167,12 +167,14 @@ class buttonGameController: UIViewController {
     
     
     //called when a button is pressed, passed the number of the button
-    func buttonPressed(number: Int) {
+    func buttonPressed(btnIndex: Int) {
+        let number = Int(buttonUIs[btnIndex-1].title(for: .normal)!)!
+        
         print("button pressed: ", number)
         
         record(message: "\(number) Pressed", correctPress: (number == nextNumber))
         
-        if Int(buttonUIs[number-1].title(for: .normal) ?? "") == nextNumber {
+        if number == nextNumber {
             
             if (nextNumber == numberOfButtons) {
                 newRound()
@@ -260,13 +262,15 @@ class buttonGameController: UIViewController {
         
         record(message: message)
         let alert = UIAlertController(title: message, message: "Task is over", preferredStyle: UIAlertController.Style.alert)
-        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { (action: UIAlertAction!) in
+            self.dismiss(animated: true, completion: nil)
+        }))
         present(alert, animated: true, completion: nil)
         
         //todo open record
         
         
-        self.dismiss(animated: true, completion: nil)
+        
     }
     
     
