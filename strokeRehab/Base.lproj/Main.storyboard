@@ -958,8 +958,38 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="0Y3-Ry-u4P">
+                                <rect key="frame" x="0.0" y="120.5" width="320" height="447.5"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="xAT-2b-ul3">
+                                        <rect key="frame" x="135" y="0.0" width="50" height="447.5"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dbu-Vv-yed">
+                                                <rect key="frame" x="0.0" y="199" width="50" height="50"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="50" id="Bsj-Kh-7IE"/>
+                                                    <constraint firstAttribute="width" constant="50" id="T57-PE-VJQ"/>
+                                                </constraints>
+                                                <buttonConfiguration key="configuration" style="filled" title="1">
+                                                    <fontDescription key="titleFontDescription" type="system" pointSize="30"/>
+                                                </buttonConfiguration>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                        <integer key="value" value="25"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="clipsToBounds" value="YES"/>
+                                                </userDefinedRuntimeAttributes>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FJm-dd-YeG">
-                                <rect key="frame" x="16" y="136.5" width="38" height="50"/>
+                                <rect key="frame" x="16" y="136.5" width="50" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="50" id="QN9-4Y-ocm"/>
+                                    <constraint firstAttribute="height" constant="50" id="WqQ-gh-S2f"/>
+                                </constraints>
                                 <buttonConfiguration key="configuration" style="filled" title="1">
                                     <fontDescription key="titleFontDescription" type="system" pointSize="30"/>
                                 </buttonConfiguration>
@@ -989,6 +1019,7 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BwL-c7-aJ4">
                                 <rect key="frame" x="16" y="502" width="50" height="50"/>
                                 <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="Q3n-qu-xIa"/>
                                     <constraint firstAttribute="width" constant="50" id="wxo-tp-Ih0"/>
                                 </constraints>
                                 <buttonConfiguration key="configuration" style="filled" title="1">
@@ -1005,6 +1036,7 @@
                                 <rect key="frame" x="254" y="502" width="50" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="50" id="2CX-Pj-xfA"/>
+                                    <constraint firstAttribute="height" constant="50" id="wVy-dW-x9i"/>
                                 </constraints>
                                 <buttonConfiguration key="configuration" style="filled" title="1">
                                     <fontDescription key="titleFontDescription" type="system" pointSize="30"/>
@@ -1016,31 +1048,6 @@
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="clipsToBounds" value="YES"/>
                                 </userDefinedRuntimeAttributes>
                             </button>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="0Y3-Ry-u4P">
-                                <rect key="frame" x="0.0" y="120.5" width="320" height="447.5"/>
-                                <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="xAT-2b-ul3">
-                                        <rect key="frame" x="135" y="0.0" width="50" height="447.5"/>
-                                        <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dbu-Vv-yed">
-                                                <rect key="frame" x="0.0" y="199" width="50" height="50"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" constant="50" id="T57-PE-VJQ"/>
-                                                </constraints>
-                                                <buttonConfiguration key="configuration" style="filled" title="1">
-                                                    <fontDescription key="titleFontDescription" type="system" pointSize="30"/>
-                                                </buttonConfiguration>
-                                                <userDefinedRuntimeAttributes>
-                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                                        <integer key="value" value="25"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="clipsToBounds" value="YES"/>
-                                                </userDefinedRuntimeAttributes>
-                                            </button>
-                                        </subviews>
-                                    </stackView>
-                                </subviews>
-                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="G8L-Ke-Hcd"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -1073,8 +1080,20 @@
                     </view>
                     <connections>
                         <outlet property="buttonA" destination="FJm-dd-YeG" id="fTC-y5-XxS"/>
+                        <outlet property="buttonAHeight" destination="WqQ-gh-S2f" id="yxr-Hk-uaT"/>
+                        <outlet property="buttonAWidth" destination="QN9-4Y-ocm" id="nEo-pX-zCr"/>
+                        <outlet property="buttonB" destination="oNE-Jy-XFF" id="fMX-Ca-1LF"/>
                         <outlet property="buttonBHeight" destination="PIf-d7-2fh" id="Ghc-1d-oa5"/>
                         <outlet property="buttonBWidth" destination="Nni-pC-vg4" id="cOb-yi-cwX"/>
+                        <outlet property="buttonC" destination="BwL-c7-aJ4" id="tpm-xV-SPN"/>
+                        <outlet property="buttonCHeight" destination="Q3n-qu-xIa" id="hmh-uR-pcV"/>
+                        <outlet property="buttonCWidth" destination="wxo-tp-Ih0" id="8qW-4u-f0Q"/>
+                        <outlet property="buttonD" destination="vQ2-XT-Fo3" id="OpW-pG-cF7"/>
+                        <outlet property="buttonDHeight" destination="wVy-dW-x9i" id="h0j-pY-Kie"/>
+                        <outlet property="buttonDWidth" destination="2CX-Pj-xfA" id="tOQ-Ih-UdC"/>
+                        <outlet property="buttonE" destination="Dbu-Vv-yed" id="w1D-PG-YVM"/>
+                        <outlet property="buttonEHeight" destination="Bsj-Kh-7IE" id="1Su-Xn-Fgb"/>
+                        <outlet property="buttonEWidth" destination="T57-PE-VJQ" id="daV-Rz-ti3"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Sdw-oK-5gE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
