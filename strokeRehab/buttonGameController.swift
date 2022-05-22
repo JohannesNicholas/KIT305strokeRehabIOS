@@ -119,6 +119,9 @@ class buttonGameController: UIViewController {
         
         
         //time limit
+        self.time = timeLimit
+        self.timeBar.progress = 0
+        self.timeLabel.text = String(timeLimit)
         if (timeLimit != 0) {
             self.timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true, block: { _ in
                 
@@ -131,7 +134,7 @@ class buttonGameController: UIViewController {
                 self.time -= 1
                 
                 self.timeBar.progress = Float(self.timeLimit - self.time) / Float(self.timeLimit)
-                self.timeLabel.text = String(self.timeLimit - self.time)
+                self.timeLabel.text = String(self.time)
                 
             })
         }
@@ -153,6 +156,7 @@ class buttonGameController: UIViewController {
         }
         recordData.start = Timestamp.init()
         recordData.goals = !freePlay
+        recordData.buttonsOrNotches = Int32(numberOfButtons)
         
         newRound()
         
