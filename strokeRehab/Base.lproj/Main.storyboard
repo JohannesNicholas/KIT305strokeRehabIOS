@@ -815,7 +815,7 @@
         <!--Home-->
         <scene sceneID="ZtQ-44-0oP">
             <objects>
-                <viewController id="0ZJ-ax-yt0" sceneMemberID="viewController">
+                <viewController id="0ZJ-ax-yt0" customClass="homeViewController" customModule="strokeRehab" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="l5k-qR-5Uj">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -823,7 +823,9 @@
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="znP-4v-iL3">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                 <items>
-                                    <navigationItem title="Home" id="a0h-1s-3ur"/>
+                                    <navigationItem title="Home" id="a0h-1s-3ur">
+                                        <barButtonItem key="backBarButtonItem" title="back" id="1Fa-bj-Mol"/>
+                                    </navigationItem>
                                 </items>
                             </navigationBar>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="32" translatesAutoresizingMaskIntoConstraints="NO" id="wKv-rS-8vU">
@@ -842,11 +844,18 @@
                                                 <rect key="frame" x="8" y="30.5" width="272" height="31"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="filled" title="🌐 Normal"/>
+                                                <connections>
+                                                    <action selector="normalGoalsPressed:" destination="0ZJ-ax-yt0" eventType="touchUpInside" id="stw-wq-1eS"/>
+                                                    <segue destination="ocx-Kr-PeP" kind="presentation" identifier="openButtonGame" modalPresentationStyle="fullScreen" id="4BS-p6-vTT"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" alpha="0.65000000000000002" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dAo-Y0-15D">
                                                 <rect key="frame" x="8" y="70.5" width="272" height="31"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="filled" title="🕹 Slider"/>
+                                                <connections>
+                                                    <action selector="sliderGoalsPressed:" destination="0ZJ-ax-yt0" eventType="touchUpInside" id="crM-7V-2kb"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemGray3Color"/>
@@ -865,11 +874,17 @@
                                                 <rect key="frame" x="8" y="30.5" width="272" height="31"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="filled" title="🌐 Normal"/>
+                                                <connections>
+                                                    <action selector="normalFreePlayPressed:" destination="0ZJ-ax-yt0" eventType="touchUpInside" id="QOC-0i-aY3"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" alpha="0.65000000000000002" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fY6-Y3-XcY">
                                                 <rect key="frame" x="8" y="70.5" width="272" height="31"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="filled" title="🕹 Slider"/>
+                                                <connections>
+                                                    <action selector="normalSliderPressed:" destination="0ZJ-ax-yt0" eventType="touchUpInside" id="SqL-ge-4VT"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemGray3Color"/>
@@ -895,6 +910,44 @@
             </objects>
             <point key="canvasLocation" x="1164.375" y="61.267605633802816"/>
         </scene>
+        <!--Button Game Controller-->
+        <scene sceneID="0UJ-h6-O5Q">
+            <objects>
+                <viewController id="ocx-Kr-PeP" customClass="buttonGameController" customModule="strokeRehab" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="gzs-BN-S2c">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" backIndicatorImage="chevron.backward" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="g3c-TZ-I7a">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="uhG-T4-8He"/>
+                                </constraints>
+                                <items>
+                                    <navigationItem title="Stroke Rehab" id="7la-bi-sbD">
+                                        <barButtonItem key="backBarButtonItem" title="back" id="WFl-HC-h0D"/>
+                                        <barButtonItem key="rightBarButtonItem" title="End" id="U2V-0p-ELf">
+                                            <connections>
+                                                <action selector="EndPressed:" destination="ocx-Kr-PeP" id="g4w-tA-YlY"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="G8L-Ke-Hcd"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="g3c-TZ-I7a" firstAttribute="trailing" secondItem="G8L-Ke-Hcd" secondAttribute="trailing" id="dhE-ey-gFl"/>
+                            <constraint firstItem="g3c-TZ-I7a" firstAttribute="top" secondItem="G8L-Ke-Hcd" secondAttribute="top" id="jlX-wa-wef"/>
+                            <constraint firstItem="g3c-TZ-I7a" firstAttribute="leading" secondItem="G8L-Ke-Hcd" secondAttribute="leading" id="vQ5-0c-srY"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Sdw-oK-5gE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2044" y="15"/>
+        </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="1CT-1h-ajQ">
             <objects>
@@ -917,6 +970,7 @@
     </scenes>
     <resources>
         <image name="camera" catalog="system" width="128" height="94"/>
+        <image name="chevron.backward" catalog="system" width="96" height="128"/>
         <image name="chevron.forward" catalog="system" width="96" height="128"/>
         <image name="gearshape.fill" catalog="system" width="128" height="121"/>
         <image name="house.fill" catalog="system" width="128" height="106"/>
