@@ -19,6 +19,8 @@
 		5C16F12D282CC1B0007D5F53 /* strokeRehabTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C16F12C282CC1B0007D5F53 /* strokeRehabTests.swift */; };
 		5C16F137282CC1B0007D5F53 /* strokeRehabUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C16F136282CC1B0007D5F53 /* strokeRehabUITests.swift */; };
 		5C16F139282CC1B0007D5F53 /* strokeRehabUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C16F138282CC1B0007D5F53 /* strokeRehabUITestsLaunchTests.swift */; };
+		5C22DE232839FBE600039CE6 /* Icon-60@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5C22DE212839FBE600039CE6 /* Icon-60@3x.png */; };
+		5C22DE242839FBE600039CE6 /* Icon-60@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5C22DE222839FBE600039CE6 /* Icon-60@2x.png */; };
 		5C4ABFB62834B09800263FBB /* SettingsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C4ABFB52834B09800263FBB /* SettingsController.swift */; };
 		5C4ABFB82834B50F00263FBB /* SettingsTableControllerTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C4ABFB72834B50F00263FBB /* SettingsTableControllerTableViewController.swift */; };
 		5C71E24B283798C50041954A /* Totals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C71E24A283798C50041954A /* Totals.swift */; };
@@ -69,6 +71,8 @@
 		5C16F132282CC1B0007D5F53 /* strokeRehabUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = strokeRehabUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5C16F136282CC1B0007D5F53 /* strokeRehabUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = strokeRehabUITests.swift; sourceTree = "<group>"; };
 		5C16F138282CC1B0007D5F53 /* strokeRehabUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = strokeRehabUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		5C22DE212839FBE600039CE6 /* Icon-60@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon-60@3x.png"; path = "Assets.xcassets/AppIcon.appiconset/Icon-60@3x.png"; sourceTree = "<group>"; };
+		5C22DE222839FBE600039CE6 /* Icon-60@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon-60@2x.png"; path = "Assets.xcassets/AppIcon.appiconset/Icon-60@2x.png"; sourceTree = "<group>"; };
 		5C4ABFB52834B09800263FBB /* SettingsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsController.swift; sourceTree = "<group>"; };
 		5C4ABFB72834B50F00263FBB /* SettingsTableControllerTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableControllerTableViewController.swift; sourceTree = "<group>"; };
 		5C71E24A283798C50041954A /* Totals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Totals.swift; sourceTree = "<group>"; };
@@ -146,6 +150,8 @@
 		5C16F114282CC1AC007D5F53 /* strokeRehab */ = {
 			isa = PBXGroup;
 			children = (
+				5C22DE222839FBE600039CE6 /* Icon-60@2x.png */,
+				5C22DE212839FBE600039CE6 /* Icon-60@3x.png */,
 				5C4ABFB72834B50F00263FBB /* SettingsTableControllerTableViewController.swift */,
 				5C0C296F282CD4D200300737 /* GoogleService-Info.plist */,
 				5C16F115282CC1AC007D5F53 /* AppDelegate.swift */,
@@ -307,9 +313,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				5C16F122282CC1AF007D5F53 /* LaunchScreen.storyboard in Resources */,
+				5C22DE232839FBE600039CE6 /* Icon-60@3x.png in Resources */,
 				5C0C2970282CD4D200300737 /* GoogleService-Info.plist in Resources */,
 				5C16F11F282CC1AF007D5F53 /* Assets.xcassets in Resources */,
 				5C16F11D282CC1AC007D5F53 /* Main.storyboard in Resources */,
+				5C22DE242839FBE600039CE6 /* Icon-60@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

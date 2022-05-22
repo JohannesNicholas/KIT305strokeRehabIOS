@@ -20,5 +20,7 @@ class ViewController: UIViewController {
         print("\nINITIALIZED FIRESTORE APP \(db.app.name)\n")    }
 
 
+    let test = Array((1...50))
+    
 }
 
