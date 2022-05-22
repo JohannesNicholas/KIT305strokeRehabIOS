@@ -37,19 +37,19 @@ class buttonGameController: UIViewController {
     var buttonSizeConstraints : [NSLayoutConstraint] = []
     
     @IBAction func buttonApressed(_ sender: Any) {
-        buttonPressed(1)
+        buttonPressed(number: 1)
     }
     @IBAction func buttonBpressed(_ sender: Any) {
-        buttonPressed(2)
+        buttonPressed(number: 2)
     }
     @IBAction func buttonCpressed(_ sender: Any) {
-        buttonPressed(3)
+        buttonPressed(number: 3)
     }
     @IBAction func buttonDpressed(_ sender: Any) {
-        buttonPressed(4)
+        buttonPressed(number: 4)
     }
     @IBAction func buttonEpressed(_ sender: Any) {
-        buttonPressed(5)
+        buttonPressed(number: 5)
     }
     
     
@@ -125,7 +125,7 @@ class buttonGameController: UIViewController {
                 
                 
                 if (self.time == 0) {
-                    endOfGame(timeout: true)
+                    self.endOfGame(timeOut: true)
                 }
                 
                 self.time -= 1
@@ -186,6 +186,144 @@ class buttonGameController: UIViewController {
             }
          
             highlightNextNum()
+        }
+    }
+    
+    
+    
+    //adds a message into the record and stores it in the database
+    func record(message: String, correctPress: Bool? = nil) {
+        recordData.messages?.append(
+            Message(
+                correctPress: correctPress,
+                datetime: Timestamp.init(),
+                message: message,
+                rep: Int32(round)
+            )
+        )
+        
+        do {
+            try db.collection("Records").document(recordData.documentID ?? "error").setData(from: recordData)
+        } catch let error {
+            print("Error writing record to Firestore: \(error)")
+        }
+        
+        
+        //increment the total correct presses counter
+        if (correctPress == true) {
+            let docRef = db.collection("totals").document("totals")
+
+            docRef.getDocument { (document, error) in
+                if let document = document, document.exists {
+                    let conversionResult = Result
+                    {
+                        try document.data(as: Totals.self)
+                    }
+
+                    //check if conversionResult is success or failure (i.e. was an exception/error thrown?
+                    switch conversionResult
+                    {
+                        //no problems (but could still be nil)
+                        case .success(var total):
+                            print("loaded!")
+                        
+                        total.correctButtonPresses = (total.correctButtonPresses ?? 0) + 1
+                            do {
+                                try self.db.collection("totals").document("totals").setData(from: total)
+                            } catch let error {
+                                print("Error writing city to Firestore: \(error)")
+                            }
+                        
+                        
+                            
+                            
+                        case .failure(let error):
+                            // A `Movie` value could not be initialized from the DocumentSnapshot.
+                            print("Error decoding data: \(error)")
+                    }
+                } else {
+                    print("Document does not exist")
+                }
+            }
+        }
+    }
+    
+    
+    func endOfGame(timeOut: Bool = false) {
+        timer.invalidate()
+        var message = ""
+        if timeOut {
+            message = "⏱ TIME OUT! ⏱"
+        }
+        else {
+            message = "🏆 COMPLETE! 🏆"
+        }
+        
+        record(message: message)
+        let alert = UIAlertController(title: message, message: "Task is over", preferredStyle: UIAlertController.Style.alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        present(alert, animated: true, completion: nil)
+        
+        //todo open record
+        
+        
+        self.dismiss(animated: true, completion: nil)
+    }
+    
+    
+    func newRound() {
+        nextNumber = 1
+        round += 1
+        
+        if (round > numberOfRounds && !freePlay && numberOfRounds != 0){
+            endOfGame()
+            return
+        }
+        
+        if freePlay || numberOfRounds == 0 {
+            scoreLabel.text = "\(round)/∞"
+        }
+        else {
+            scoreLabel.text = "\(round)/\(numberOfRounds)"
+        }
+        record(message: "Round \(round)")
+        
+        
+        
+        var numbers = [1,2,3,4,5]
+        if (randomOrder) {
+            numbers.shuffle()
+        }
+        
+        for i in (0 ..< 4) {
+            let button = buttonUIs[i]
+            let number = numbers[i]
+            
+            if (number <= numberOfButtons){
+                button.layer.isHidden = false
+                button.titleLabel?.text = String(number)
+                
+            }
+            else {
+                button.layer.isHidden = true
+            }
+        }
+        
+        highlightNextNum()
+        
+    }
+    
+    
+    //highlights the next button to be pressed, de highlights the others
+    func highlightNextNum() {
+        for i in (0 ..< 4) {
+            let button = buttonUIs[i]
+            
+            button.alpha = 1
+            
+            if button.titleLabel?.text != String(nextNumber) && highlightNextButton {
+                button.alpha = 0.75
+            }
         }
     }
     
