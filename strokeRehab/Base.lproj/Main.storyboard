@@ -1111,6 +1111,7 @@
                         <outlet property="scoreLabel" destination="mLP-AY-Cyo" id="vth-7B-Ece"/>
                         <outlet property="timeBar" destination="Vaa-g6-otS" id="Jnk-j4-1va"/>
                         <outlet property="timeLabel" destination="Lfb-gH-uff" id="Lh7-fI-wA3"/>
+                        <segue destination="mIC-Ra-KnG" kind="show" identifier="doneScreen" id="915-O4-ZW6"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Sdw-oK-5gE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -1136,21 +1137,10 @@
             </objects>
             <point key="canvasLocation" x="-1013" y="875"/>
         </scene>
-        <!--View Controller-->
-        <scene sceneID="4kX-sN-HBG">
-            <objects>
-                <viewController id="2Kw-hf-ywZ" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="xkq-xd-DQi">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="o3P-KM-o6k" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1749" y="-467"/>
-        </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="915-O4-ZW6"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="camera" catalog="system" width="128" height="94"/>
         <image name="chevron.backward" catalog="system" width="96" height="128"/>

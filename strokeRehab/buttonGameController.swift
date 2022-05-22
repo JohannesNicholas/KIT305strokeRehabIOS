@@ -70,6 +70,7 @@ class buttonGameController: UIViewController {
     var timer = Timer()
     var recordData = Record()
     
+    
     let db = Firestore.firestore()
     
     override func viewDidLoad() {
@@ -165,6 +166,7 @@ class buttonGameController: UIViewController {
     
     
     override func dismiss(animated flag: Bool, completion: (() -> Void)? = nil) {
+        
         timer.invalidate()
         super.dismiss(animated: flag, completion: completion)
     }
@@ -267,7 +269,10 @@ class buttonGameController: UIViewController {
         record(message: message)
         let alert = UIAlertController(title: message, message: "Task is over", preferredStyle: UIAlertController.Style.alert)
         alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { (action: UIAlertAction!) in
-            self.dismiss(animated: true, completion: nil)
+            
+            self.performSegue(withIdentifier: "doneScreen", sender: nil)
+            
+            
         }))
         present(alert, animated: true, completion: nil)
         
@@ -335,16 +340,19 @@ class buttonGameController: UIViewController {
     }
     
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    //send the record over
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-    
-     // Pass the selected object to the new view controller.
+        if segue.identifier == "doneScreen"
+        {
+            if let recordScreen = segue.destination as? RecordUIViewController
+            {
+                recordScreen.record = recordData
+            }
+        }
     }
-    */
-
+    
+    
+    
+        
 }
 
