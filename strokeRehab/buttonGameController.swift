@@ -9,6 +9,16 @@ import UIKit
 
 class buttonGameController: UIViewController {
 
+    
+    @IBOutlet var buttonA: UIButton!
+    
+    @IBOutlet var buttonBWidth: NSLayoutConstraint!
+    
+    @IBOutlet var buttonBHeight: NSLayoutConstraint!
+    
+    
+    
+    
     @IBAction func EndPressed(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
     }
@@ -17,6 +27,10 @@ class buttonGameController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        buttonA.frame.size = CGSize(width: 100, height: 100)
+        
+        buttonBWidth.constant
+        
         // Do any additional setup after loading the view.
     }
     
