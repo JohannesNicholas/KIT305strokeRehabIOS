@@ -9,18 +9,23 @@ import UIKit
 
 class homeViewController: UIViewController {
 
+    
+    var freePlay = false
     @IBAction func normalGoalsPressed(_ sender: Any) {
-        self.performSegue(withIdentifier: "openButtonGame", sender: nil)
+        freePlay = false
     }
     
     @IBAction func sliderGoalsPressed(_ sender: Any) {
+        freePlay = false
     }
     
     @IBAction func normalFreePlayPressed(_ sender: Any) {
+        freePlay = true
     }
     
     
     @IBAction func normalSliderPressed(_ sender: Any) {
+        freePlay = true
     }
     
     
@@ -32,15 +37,23 @@ class homeViewController: UIViewController {
     }
     
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        
+        if let gameController = segue.destination as? buttonGameController
+        {
+            gameController.freePlay = freePlay
+        }
+        
     }
-    */
+    
+    
+    
+    
+    
     
     
     

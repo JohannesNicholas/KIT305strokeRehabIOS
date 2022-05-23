@@ -847,6 +847,7 @@
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="filled" title="🌐 Normal"/>
                                                 <connections>
+                                                    <action selector="normalGoalsPressed:" destination="0ZJ-ax-yt0" eventType="touchUpInside" id="teN-cx-K6s"/>
                                                     <segue destination="ocx-Kr-PeP" kind="presentation" identifier="openButtonGame" modalPresentationStyle="fullScreen" id="4BS-p6-vTT"/>
                                                 </connections>
                                             </button>
@@ -877,6 +878,7 @@
                                                 <buttonConfiguration key="configuration" style="filled" title="🌐 Normal"/>
                                                 <connections>
                                                     <action selector="normalFreePlayPressed:" destination="0ZJ-ax-yt0" eventType="touchUpInside" id="QOC-0i-aY3"/>
+                                                    <segue destination="ocx-Kr-PeP" kind="presentation" id="cCP-Va-rAM"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" alpha="0.65000000000000002" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fY6-Y3-XcY">
@@ -916,7 +918,7 @@
             <objects>
                 <viewController id="ocx-Kr-PeP" customClass="buttonGameController" customModule="strokeRehab" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="gzs-BN-S2c">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="548"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <navigationBar contentMode="scaleToFill" backIndicatorImage="chevron.backward" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="g3c-TZ-I7a">
@@ -960,10 +962,10 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hKZ-HV-jqM">
-                                <rect key="frame" x="0.0" y="120.5" width="320" height="447.5"/>
+                                <rect key="frame" x="0.0" y="120.5" width="320" height="427.5"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dbu-Vv-yed">
-                                        <rect key="frame" x="135" y="199" width="50" height="50"/>
+                                        <rect key="frame" x="135" y="189" width="50" height="50"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="Bsj-Kh-7IE"/>
                                             <constraint firstAttribute="width" constant="50" id="T57-PE-VJQ"/>
@@ -1027,7 +1029,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BwL-c7-aJ4">
-                                <rect key="frame" x="16" y="502" width="50" height="50"/>
+                                <rect key="frame" x="16" y="482" width="50" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="Q3n-qu-xIa"/>
                                     <constraint firstAttribute="width" constant="50" id="wxo-tp-Ih0"/>
@@ -1046,7 +1048,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vQ2-XT-Fo3">
-                                <rect key="frame" x="254" y="502" width="50" height="50"/>
+                                <rect key="frame" x="254" y="482" width="50" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="50" id="2CX-Pj-xfA"/>
                                     <constraint firstAttribute="height" constant="50" id="wVy-dW-x9i"/>
@@ -1143,6 +1145,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
+        <segue reference="cCP-Va-rAM"/>
         <segue reference="915-O4-ZW6"/>
     </inferredMetricsTieBreakers>
     <resources>

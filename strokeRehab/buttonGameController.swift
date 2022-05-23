@@ -54,7 +54,7 @@ class buttonGameController: UIViewController {
     
     
     @IBAction func EndPressed(_ sender: Any) {
-        self.dismiss(animated: true, completion: nil)
+        endOfGame(stopped: true)
     }
     
     
@@ -123,7 +123,7 @@ class buttonGameController: UIViewController {
         self.time = timeLimit
         self.timeBar.progress = 0
         self.timeLabel.text = String(timeLimit)
-        if (timeLimit != 0) {
+        if (timeLimit != 0 && !freePlay) {
             self.timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true, block: { _ in
                 
                 
@@ -256,11 +256,14 @@ class buttonGameController: UIViewController {
     }
     
     
-    func endOfGame(timeOut: Bool = false) {
+    func endOfGame(timeOut: Bool = false, stopped: Bool = false) {
         timer.invalidate()
         var message = ""
         if timeOut {
             message = "⏱ TIME OUT! ⏱"
+        }
+        else if stopped {
+            message = "🚦 STOPPED! 🚦"
         }
         else {
             message = "🏆 COMPLETE! 🏆"
