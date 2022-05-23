@@ -1200,18 +1200,31 @@
                                         <rect key="frame" x="0.0" y="64" width="320" height="320"/>
                                         <subviews>
                                             <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="LHd-07-Ym4">
-                                                <rect key="frame" x="0.0" y="156.5" width="320" height="7"/>
+                                                <rect key="frame" x="10" y="156.5" width="300" height="7"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="7" id="SNb-9Y-cQo"/>
                                                 </constraints>
                                             </progressView>
+                                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="MXj-b3-oMs">
+                                                <rect key="frame" x="-2" y="0.0" width="324" height="321"/>
+                                                <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <color key="minimumTrackTintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <color key="maximumTrackTintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <connections>
+                                                    <action selector="sliderValueChanged:" destination="P1z-J4-lJt" eventType="valueChanged" id="3e0-wg-GPR"/>
+                                                </connections>
+                                            </slider>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
-                                            <constraint firstItem="LHd-07-Ym4" firstAttribute="leading" secondItem="u6D-oZ-FEk" secondAttribute="leading" id="8BS-Ry-l3n"/>
+                                            <constraint firstItem="LHd-07-Ym4" firstAttribute="leading" secondItem="u6D-oZ-FEk" secondAttribute="leading" constant="10" id="8BS-Ry-l3n"/>
+                                            <constraint firstItem="MXj-b3-oMs" firstAttribute="top" secondItem="u6D-oZ-FEk" secondAttribute="top" id="CAd-vT-dgK"/>
                                             <constraint firstItem="LHd-07-Ym4" firstAttribute="centerY" secondItem="u6D-oZ-FEk" secondAttribute="centerY" id="Gm5-s0-jFh"/>
                                             <constraint firstAttribute="width" secondItem="u6D-oZ-FEk" secondAttribute="height" multiplier="1:1" id="RnD-rU-F3b"/>
-                                            <constraint firstAttribute="trailing" secondItem="LHd-07-Ym4" secondAttribute="trailing" id="ayS-cc-JEw"/>
+                                            <constraint firstAttribute="trailing" secondItem="LHd-07-Ym4" secondAttribute="trailing" constant="10" id="ayS-cc-JEw"/>
+                                            <constraint firstAttribute="bottom" secondItem="MXj-b3-oMs" secondAttribute="bottom" id="lzb-aK-HJp"/>
+                                            <constraint firstAttribute="trailing" secondItem="MXj-b3-oMs" secondAttribute="trailing" id="wTd-pq-yMX"/>
+                                            <constraint firstItem="MXj-b3-oMs" firstAttribute="leading" secondItem="u6D-oZ-FEk" secondAttribute="leading" id="xTx-sl-TJS"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -1247,6 +1260,7 @@
                     <connections>
                         <outlet property="boardView" destination="u6D-oZ-FEk" id="dL0-Fw-0W9"/>
                         <outlet property="scoreLabel" destination="S6K-fv-Yqf" id="PBz-de-uGJ"/>
+                        <outlet property="slider" destination="MXj-b3-oMs" id="yxK-oo-aJE"/>
                         <outlet property="targetBar" destination="LHd-07-Ym4" id="FS1-hM-kL1"/>
                         <outlet property="timeBar" destination="7nf-tu-opB" id="bso-OL-z8y"/>
                         <outlet property="timeLabel" destination="2xd-Wb-Lfk" id="C0F-UI-X5k"/>

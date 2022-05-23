@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import Firebase
+import FirebaseFirestoreSwift
 
 class sliderGameController: UIViewController {
     
@@ -16,10 +18,34 @@ class sliderGameController: UIViewController {
 
     @IBOutlet var boardView: UIView!
     @IBOutlet var targetBar: UIProgressView!
+    @IBOutlet var slider: UISlider!
+    @IBAction func sliderValueChanged(_ sender: UISlider) {
+        let spots = Float(numberOfNotches + 1)
+        var value = Float((sender.value * spots))
+        value.round()
+        sender.value = value / spots
+    }
+    
     
     @IBAction func EndPressed(_ sender: Any) {
         //endOfGame(stopped: true)
     }
+    
+    
+    
+    var numberOfNotches = 3
+    var numberOfRounds = 5
+    var randomOrder = true
+    var freePlay = false
+    var timeLimit = 0
+    var round = 0
+    var nextNotch = 1
+    var time = 0
+    var timer = Timer()
+    var recordData = Record()
+    
+    
+    let db = Firestore.firestore()
     
     
     override func viewDidLoad() {
