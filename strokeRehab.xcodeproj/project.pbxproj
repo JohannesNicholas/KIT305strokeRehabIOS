@@ -25,6 +25,7 @@
 		5C22DE28283A045900039CE6 /* buttonGameController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C22DE27283A045900039CE6 /* buttonGameController.swift */; };
 		5C4ABFB62834B09800263FBB /* SettingsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C4ABFB52834B09800263FBB /* SettingsController.swift */; };
 		5C4ABFB82834B50F00263FBB /* SettingsTableControllerTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C4ABFB72834B50F00263FBB /* SettingsTableControllerTableViewController.swift */; };
+		5C5B42B3283B48BF0051EFCC /* sliderGameController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C5B42B2283B48BF0051EFCC /* sliderGameController.swift */; };
 		5C71E24B283798C50041954A /* Totals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C71E24A283798C50041954A /* Totals.swift */; };
 		5C879C7928366B8E00C101FF /* RecordUIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C879C7828366B8E00C101FF /* RecordUIViewController.swift */; };
 		5C879C7B2836786100C101FF /* RecordMessageViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C879C7A2836786100C101FF /* RecordMessageViewCell.swift */; };
@@ -79,6 +80,7 @@
 		5C22DE27283A045900039CE6 /* buttonGameController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = buttonGameController.swift; sourceTree = "<group>"; };
 		5C4ABFB52834B09800263FBB /* SettingsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsController.swift; sourceTree = "<group>"; };
 		5C4ABFB72834B50F00263FBB /* SettingsTableControllerTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableControllerTableViewController.swift; sourceTree = "<group>"; };
+		5C5B42B2283B48BF0051EFCC /* sliderGameController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = sliderGameController.swift; sourceTree = "<group>"; };
 		5C71E24A283798C50041954A /* Totals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Totals.swift; sourceTree = "<group>"; };
 		5C879C7828366B8E00C101FF /* RecordUIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordUIViewController.swift; sourceTree = "<group>"; };
 		5C879C7A2836786100C101FF /* RecordMessageViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordMessageViewCell.swift; sourceTree = "<group>"; };
@@ -175,6 +177,7 @@
 				5CD65BC62837BC6E000CEB38 /* UIDeselectableSegmentControl.swift */,
 				5C22DE252839FDE100039CE6 /* homeViewController.swift */,
 				5C22DE27283A045900039CE6 /* buttonGameController.swift */,
+				5C5B42B2283B48BF0051EFCC /* sliderGameController.swift */,
 			);
 			path = strokeRehab;
 			sourceTree = "<group>";
@@ -456,6 +459,7 @@
 				5C16F11A282CC1AC007D5F53 /* ViewController.swift in Sources */,
 				5C22DE262839FDE100039CE6 /* homeViewController.swift in Sources */,
 				5C879C7B2836786100C101FF /* RecordMessageViewCell.swift in Sources */,
+				5C5B42B3283B48BF0051EFCC /* sliderGameController.swift in Sources */,
 				5CD65BC72837BC6E000CEB38 /* UIDeselectableSegmentControl.swift in Sources */,
 				5CE8D7A128321460009C170C /* Record.swift in Sources */,
 				5C4ABFB62834B09800263FBB /* SettingsController.swift in Sources */,
