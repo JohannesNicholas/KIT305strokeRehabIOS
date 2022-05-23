@@ -281,7 +281,7 @@ class buttonGameController: UIViewController {
         self.performSegue(withIdentifier: "doneScreen", sender: self)
         //present(alert, animated: true, completion: nil)
         
-        //todo open record
+
         
         
         
@@ -356,11 +356,6 @@ class buttonGameController: UIViewController {
         }
     }
     
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        print("Hello There!")
-    }
     
     
         

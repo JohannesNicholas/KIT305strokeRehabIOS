@@ -1211,6 +1211,7 @@
                                                 <color key="minimumTrackTintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <color key="maximumTrackTintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <connections>
+                                                    <action selector="sliderTouchUpInside:" destination="P1z-J4-lJt" eventType="touchUpInside" id="ZGd-Ho-UW1"/>
                                                     <action selector="sliderValueChanged:" destination="P1z-J4-lJt" eventType="valueChanged" id="3e0-wg-GPR"/>
                                                 </connections>
                                             </slider>
@@ -1264,7 +1265,8 @@
                         <outlet property="targetBar" destination="LHd-07-Ym4" id="FS1-hM-kL1"/>
                         <outlet property="timeBar" destination="7nf-tu-opB" id="bso-OL-z8y"/>
                         <outlet property="timeLabel" destination="2xd-Wb-Lfk" id="C0F-UI-X5k"/>
-                        <segue destination="COX-n4-ssx" kind="unwind" identifier="unwindToOne2" unwindAction="unwindToOne:" id="BMG-LX-kHZ"/>
+                        <segue destination="COX-n4-ssx" kind="unwind" identifier="unwindToOne3" unwindAction="unwindToOne:" id="BMG-LX-kHZ"/>
+                        <segue destination="mIC-Ra-KnG" kind="presentation" identifier="doneScreen3" id="S02-A2-3Hm"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1Cg-bD-pSE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -1275,8 +1277,8 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="7xh-w9-ykU"/>
-        <segue reference="cCP-Va-rAM"/>
-        <segue reference="915-O4-ZW6"/>
+        <segue reference="4BS-p6-vTT"/>
+        <segue reference="S02-A2-3Hm"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="camera" catalog="system" width="128" height="94"/>

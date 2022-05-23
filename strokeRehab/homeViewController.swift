@@ -48,6 +48,11 @@ class homeViewController: UIViewController {
             gameController.freePlay = freePlay
         }
         
+        if let gameController = segue.destination as? sliderGameController
+        {
+            gameController.freePlay = freePlay
+        }
+        
     }
     
     
