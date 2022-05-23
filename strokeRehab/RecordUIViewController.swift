@@ -290,4 +290,13 @@ extension RecordUIViewController: UITableViewDataSource {
         
         return cell
     }
+    
+    
+    
+    override func dismiss(animated flag: Bool, completion: (() -> Void)? = nil) {
+        print("dismissed")
+        self.performSegue(withIdentifier: "unwindToOne", sender: self)
+        super.dismiss(animated: flag, completion: completion)
+    }
 }
+

@@ -166,9 +166,9 @@ class buttonGameController: UIViewController {
     
     
     override func dismiss(animated flag: Bool, completion: (() -> Void)? = nil) {
-        
+        print("dismiss in button game controller")
         timer.invalidate()
-        super.dismiss(animated: flag, completion: completion)
+        self.performSegue(withIdentifier: "unwindToOne2", sender: self)
     }
     
     
@@ -267,14 +267,16 @@ class buttonGameController: UIViewController {
         }
         
         record(message: message)
-        let alert = UIAlertController(title: message, message: "Task is over", preferredStyle: UIAlertController.Style.alert)
-        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { (action: UIAlertAction!) in
-            
-            self.performSegue(withIdentifier: "doneScreen", sender: nil)
-            
-            
-        }))
-        present(alert, animated: true, completion: nil)
+//        let alert = UIAlertController(title: message, message: "Task is over", preferredStyle: UIAlertController.Style.alert)
+//        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { (action: UIAlertAction!) in
+//            //self.dismiss(animated: true, completion: nil)
+//            self.performSegue(withIdentifier: "doneScreen", sender: self)
+//
+//
+//        }))
+        
+        self.performSegue(withIdentifier: "doneScreen", sender: self)
+        //present(alert, animated: true, completion: nil)
         
         //todo open record
         
@@ -351,6 +353,11 @@ class buttonGameController: UIViewController {
         }
     }
     
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        print("Hello There!")
+    }
     
     
         

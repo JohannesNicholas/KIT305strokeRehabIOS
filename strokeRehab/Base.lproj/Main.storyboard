@@ -326,9 +326,11 @@
                         <outlet property="repsInSecondsLabel" destination="ZTG-ZZ-Ow9" id="LLu-sp-Y11"/>
                         <outlet property="tableView" destination="R4B-ZI-8JH" id="qpQ-zT-uiH"/>
                         <outlet property="timeAndDateLabel" destination="Jit-Ul-Rs2" id="Xir-lL-uzr"/>
+                        <segue destination="YrI-ZA-JDS" kind="unwind" identifier="unwindToOne" unwindAction="unwindToOne:" id="IyT-uN-WPr"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jOO-kb-xbl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="YrI-ZA-JDS" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="2088.75" y="717.25352112676057"/>
         </scene>
@@ -1112,9 +1114,11 @@
                         <outlet property="timeBar" destination="Vaa-g6-otS" id="Jnk-j4-1va"/>
                         <outlet property="timeLabel" destination="Lfb-gH-uff" id="Lh7-fI-wA3"/>
                         <segue destination="mIC-Ra-KnG" kind="show" identifier="doneScreen" id="915-O4-ZW6"/>
+                        <segue destination="SM5-dc-eN7" kind="unwind" identifier="unwindToOne2" unwindAction="unwindToOne:" id="eqD-8v-xnE"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Sdw-oK-5gE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="SM5-dc-eN7" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="2043.75" y="14.788732394366198"/>
         </scene>
